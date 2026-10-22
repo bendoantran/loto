@@ -10,7 +10,7 @@ launch-logs/
 worker.json
 worker.lock
 STOP
-monitor-state.json
+/monitor-state.json
 monitor-events.jsonl
 monitor-events.md
 monitor.lock

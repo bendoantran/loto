@@ -120,6 +120,13 @@ class PortabilityTests(unittest.TestCase):
         self.assertIn('OnUnitActiveSec=30min', generated['loto-monitor.timer'])
         self.assertIn('"/home/example user/Documents/xoso/history.py"', generated['loto-history.service'])
 
+    def test_every_frozen_manifest_asset_is_tracked_in_git(self):
+        if not (REPO / '.git').exists():
+            self.skipTest('Git checkout metadata is not present')
+        tracked = set(subprocess.check_output(['git', 'ls-files', '-z'], cwd=REPO).decode('utf-8').split('\0'))
+        manifest = json.loads((REPO / 'snapshots/manifest.json').read_text(encoding='utf-8'))
+        self.assertEqual(set(manifest['files']) - tracked, set())
+
 
 if __name__ == "__main__":
     unittest.main()

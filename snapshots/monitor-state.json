@@ -1,0 +1,62 @@
+{
+  "updated_at_utc": "2026-10-22T11:01:02+00:00",
+  "reported_years": [
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "final_reported": true,
+  "last_processed_days": 7005,
+  "last_worker_running": false,
+  "known_review_notes": {
+    "2008-09-02": "The saved source HTML has blank cells in all prize tiers. Preserved for review; no numbers invented.",
+    "2011-02-03": "Saved source HTML omits An Giang G.1 and special-prize numbers. Preserved for review; no numbers invented."
+  },
+  "known_no_draw_notes": {
+    "2020-04-01 through 2020-04-28": "All 28 cached pages explicitly state that no draw took place. Classified separately as no_draw; source notices and HTML retained."
+  },
+  "verified_cancelled_draws": {
+    "2020": {
+      "count": 28,
+      "first": "2020-04-01",
+      "last": "2020-04-28",
+      "verification": "Each source notice explicitly says no draw; all prize cells are empty."
+    },
+    "2021": {
+      "count": 105,
+      "first": "2021-07-09",
+      "last": "2021-10-21",
+      "verification": "Each source notice explicitly says no draw; all prize cells are empty."
+    }
+  },
+  "final_verified_at_utc": "2026-10-22T11:00:10+00:00",
+  "final_totals": {
+    "checked_dates": 7005,
+    "province_date_draws": 21592,
+    "winning_numbers": 388656,
+    "status_counts": {
+      "flagged": 95,
+      "no_draw": 133,
+      "review": 2,
+      "saved": 6775
+    }
+  },
+  "final_audit_sha256": "d78cc16468086e11979094adbb14e40efb1a1d94f83fe2e8184dd02abd7214e8"
+}
