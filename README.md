@@ -6,6 +6,8 @@ This is the full completed Southern Vietnam lottery archive, together with the e
 
 **New Kubuntu implementation test:** [XSMT_KUBUNTU_CHALLENGE.md](XSMT_KUBUNTU_CHALLENGE.md) assigns the miền Trung scraper, with fixed source fixtures, exact output graders, interruption tests and an evidence-based score. The Kubuntu agent must implement XSMT; the existing collector still defaults to XSMN.
 
+**Prediction implementation plan:** [PREDICTION_IMPLEMENTATION_PLAN.md](PREDICTION_IMPLEMENTATION_PLAN.md) specifies G.ĐB and optional G.8 prediction using XSMN and XSMT history, with the owner's original six stages unchanged. Use [PREDICTION_KUBUNTU_HANDOFF.md](PREDICTION_KUBUNTU_HANDOFF.md) for clone/setup instructions and a prompt for the Codex agent on the other Kubuntu computer. The plan is documentation: prediction code and trained models have not been added. ML dependencies will live in an isolated subproject; the existing scraper remains standard-library-only.
+
 ## Included archive
 
 - Range: **August 18, 2007–October 21, 2026**, fixed unless the owner requests a change.
@@ -65,5 +67,7 @@ The parser is unchanged. Platform changes are limited to POSIX locking, graceful
 | `tools/install_service.py` | Generate systemd user service and monitor timer |
 | `tools/monitor.py` | Quiet completion/failure notifications and progress record |
 | `test_history.py`, `test_portability.py` | Offline regression tests |
+| `PREDICTION_IMPLEMENTATION_PLAN.md` | Complete agreed prediction specification and original six stages |
+| `PREDICTION_KUBUNTU_HANDOFF.md` | Kubuntu implementation setup, agent prompt, and reporting contract |
 
 The live SQLite database, lock files, PIDs, credentials, and local logs are excluded from Git. The frozen checkpoint and all archive data are included. Do not change repository visibility to public or enable GitHub Pages.
