@@ -1,0 +1,5 @@
+{
+  "purpose": "Fast integration pilot, not the full reference experiment",
+  "features": {"windows": [5], "lags": 1},
+  "model": {"seed": 1729, "iterations": 8, "depth": 2, "d_model": 16, "nhead": 2, "layers": 1, "sequence_length": 8, "epochs": 1, "batch_size": 64, "dropout": 0}
+}

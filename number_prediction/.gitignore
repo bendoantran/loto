@@ -1,0 +1,10 @@
+.venv/
+artifacts/
+datasets/
+runs/
+*.sqlite3*
+*.pt
+*.cbm
+*.ubj
+*.npz
+__pycache__/

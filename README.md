@@ -6,7 +6,7 @@ This is the full completed Southern Vietnam lottery archive, together with the e
 
 **New Kubuntu implementation test:** [XSMT_KUBUNTU_CHALLENGE.md](XSMT_KUBUNTU_CHALLENGE.md) assigns the miền Trung scraper, with fixed source fixtures, exact output graders, interruption tests and an evidence-based score. The Kubuntu agent must implement XSMT; the existing collector still defaults to XSMN.
 
-**Prediction implementation plan:** [PREDICTION_IMPLEMENTATION_PLAN.md](PREDICTION_IMPLEMENTATION_PLAN.md) specifies G.ĐB and optional G.8 prediction using XSMN and XSMT history, with the owner's original six stages unchanged. Use [PREDICTION_KUBUNTU_HANDOFF.md](PREDICTION_KUBUNTU_HANDOFF.md) for clone/setup instructions and a prompt for the Codex agent on the other Kubuntu computer. The plan is documentation: prediction code and trained models have not been added. ML dependencies will live in an isolated subproject; the existing scraper remains standard-library-only.
+**Prediction implementation:** [number_prediction/README.md](number_prediction/README.md) documents the isolated six-stage prediction pipeline, verified data snapshots, model families, chronological evaluation and portable CPU tools. [number_prediction/IMPLEMENTATION_PROGRESS.md](number_prediction/IMPLEMENTATION_PROGRESS.md) separates actual local pilot evidence from pending full server training, final-test scoring and Windows acceptance. The archive tooling remains standard-library-only.
 
 ## Included archive
 

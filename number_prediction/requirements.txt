@@ -1,0 +1,9 @@
+# Shared Python 3.12 dependencies. Install torch and XGBoost by machine role below.
+numpy==2.2.6
+pandas==2.2.3
+scipy==1.15.3
+scikit-learn==1.6.1
+catboost==1.2.8
+lightgbm==4.6.0
+optuna==4.3.0
+openpyxl==3.1.5
