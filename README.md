@@ -4,6 +4,8 @@ Private repository: **https://github.com/bendoantran/loto**.
 
 This is the full completed Southern Vietnam lottery archive, together with the exact extraction method, a restorable checkpoint, and Windows/Kubuntu controls. Start with **[KUBUNTU_AGENT_HANDOFF.md](KUBUNTU_AGENT_HANDOFF.md)** for the detailed migration procedure and a ready-to-use AI-agent prompt.
 
+**New Kubuntu implementation test:** [XSMT_KUBUNTU_CHALLENGE.md](XSMT_KUBUNTU_CHALLENGE.md) assigns the miền Trung scraper, with fixed source fixtures, exact output graders, interruption tests and an evidence-based score. The Kubuntu agent must implement XSMT; the existing collector still defaults to XSMN.
+
 ## Included archive
 
 - Range: **August 18, 2007–October 21, 2026**, fixed unless the owner requests a change.

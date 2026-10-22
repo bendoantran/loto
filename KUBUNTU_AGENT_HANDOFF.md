@@ -340,3 +340,9 @@ Run the offline tests, full baseline verifier, duplicate-process lock check, no-
 - [GitHub CLI Git credential setup](https://cli.github.com/manual/gh_auth_setup-git)
 - [Python POSIX locking](https://docs.python.org/3/library/fcntl.html)
 - [systemd service behavior](https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html)
+
+## 14. New owner-authorized XSMT implementation test
+
+After the XSMN migration, the owner requested a separate miền Trung implementation exercise. Read **[XSMT_KUBUNTU_CHALLENGE.md](XSMT_KUBUNTU_CHALLENGE.md)** and use its ready-to-paste agent prompt, frozen source references, output graders, recovery tests and scoring checklist.
+
+This adds a new region in separate data roots; it does not replace or extend the existing XSMN archive. Implement and test region support on Kubuntu before beginning full XSMT history. The current repository includes assessment tools and reference results, not a completed XSMT production collector.

@@ -14,4 +14,6 @@ Read `KUBUNTU_AGENT_HANDOFF.md` before changing or installing this project. The 
 - Do not claim real Kubuntu acceptance until commands have actually run on the target computer.
 - The original Windows source is `C:\Users\bendo\Documents\xoso`. Its existing workflow is historical context; use resolved Linux paths here.
 
+The owner separately authorized the XSMT implementation assignment in `XSMT_KUBUNTU_CHALLENGE.md`. Its new regional code and date ranges belong in separate XSMT roots. The unchanged-XSMN requirements above protect the original archive; they do not prohibit this new assignment. Inspect the new source, implement region guards, and pass its accuracy/recovery tests before starting its full historical run. Reference fixtures and grader tests alone are not a production XSMT implementation.
+
 Do not create subagents unless the owner asks for them.
