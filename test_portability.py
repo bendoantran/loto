@@ -115,7 +115,8 @@ class PortabilityTests(unittest.TestCase):
         generated = units(PurePosixPath('/home/example user/Documents/xoso'), PurePosixPath('/home/example user/Documents/xoso'), PurePosixPath('/usr/bin/python3'))
         self.assertIn('Restart=on-failure', generated['loto-history.service'])
         self.assertIn('ExecCondition=', generated['loto-history.service'])
-        self.assertIn('request-stop', generated['loto-history.service'])
+        self.assertIn('KillSignal=SIGINT', generated['loto-history.service'])
+        self.assertNotIn('ExecStop=', generated['loto-history.service'])
         self.assertIn('OnUnitActiveSec=30min', generated['loto-monitor.timer'])
         self.assertIn('"/home/example user/Documents/xoso/history.py"', generated['loto-history.service'])
 

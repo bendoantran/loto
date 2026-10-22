@@ -22,12 +22,13 @@ WorkingDirectory={quoted(root)}
 Environment=PYTHONUTF8=1
 ExecCondition={quoted(python)} {quoted(control)} should-run --root {quoted(root)}
 ExecStart={quoted(python)} -u {quoted(repo / "history.py")} run --root {quoted(root)}
-ExecStop={quoted(python)} {quoted(control)} request-stop --root {quoted(root)} --wait 30
 TimeoutStopSec=45
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=60
 UMask=0077
+# Shutdown and crash recovery must not create a durable user STOP marker.
+# Use stop-history.sh when the user intentionally wants collection to stay stopped.
 
 [Install]
 WantedBy=default.target

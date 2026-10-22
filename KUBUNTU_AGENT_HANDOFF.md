@@ -235,7 +235,7 @@ journalctl --user -u loto-history.service -n 30 --no-pager
 bash stop-history.sh
 ```
 
-STOP persists across reboots. An explicitly stopped collector must remain stopped until the user chooses start/resume. `systemctl --user stop loto-history.service` also requests STOP through ExecStop.
+STOP persists across reboots. Use `stop-history.sh` when collection must remain stopped until the user chooses start/resume. A plain `systemctl --user stop loto-history.service` performs a graceful supervisor stop but does not create the durable STOP marker; an enabled service may run again after the next login/reboot. Normal system shutdown must not create STOP, otherwise automatic reboot recovery would be disabled. The service therefore uses `KillSignal=SIGINT` without an ExecStop command that writes STOP.
 
 By default, enabled user services start with the user's session. If the owner wants them available before login and after logout, use the normal authorized system configuration:
 
