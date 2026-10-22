@@ -1,0 +1,4 @@
+{"date":"2011-02-03","status":"review","flags":[],"error":"Incomplete or nonnumeric prize G.1: ","source_url":"https://xosodaiphat.com/xsmn-03-02-2011.html"}
+{"date":"2011-03-27","status":"flagged","flags":["Đà Lạt: G.6: expected 3 numbers, source has 1","Đà Lạt: G.5: expected 1 numbers, source has 3"],"error":null,"source_url":"https://xosodaiphat.com/xsmn-27-03-2011.html"}
+{"date":"2011-11-03","status":"flagged","flags":["Bình Thuận: G.6: expected 3 numbers, source has 1","Bình Thuận: G.5: expected 1 numbers, source has 3"],"error":null,"source_url":"https://xosodaiphat.com/xsmn-03-11-2011.html"}
+{"date":"2011-11-28","status":"flagged","flags":["TP.HCM: G.4: expected 7 numbers, source has 2","TP.HCM: G.3: expected 2 numbers, source has 1","TP.HCM: G.2: expected 1 numbers, source has 7"],"error":null,"source_url":"https://xosodaiphat.com/xsmn-28-11-2011.html"}

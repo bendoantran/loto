@@ -1,0 +1,12 @@
+*.py text eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.ps1 text eol=crlf
+years/** -text
+data/** -text
+snapshots/** -text
+progress.json -text
+PROGRESS.md -text
+archive-audit.json -text
+*.gz binary

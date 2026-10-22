@@ -1,0 +1,27 @@
+name: Portable collector tests
+on:
+  push:
+    branches: [main]
+    paths: ['**.py', 'tests/**', '.github/workflows/portability.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -p "test_*.py" -v
+      - run: python tools/restore_snapshot.py --verify-files
+      - run: python tools/verify_archive.py --baseline
+      - run: python tools/control.py start

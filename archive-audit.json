@@ -1,0 +1,997 @@
+{
+  "verified_at_utc": "2026-10-22T11:00:10+00:00",
+  "start": "2007-08-18",
+  "end": "2026-10-21",
+  "checked_dates": 7005,
+  "years": [
+    {
+      "year": 2007,
+      "checked_dates": 136,
+      "status_counts": {
+        "flagged": 20,
+        "saved": 116
+      },
+      "draws": 428,
+      "winning_numbers": 7704
+    },
+    {
+      "year": 2008,
+      "checked_dates": 366,
+      "status_counts": {
+        "saved": 313,
+        "flagged": 52,
+        "review": 1
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2009,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 355,
+        "flagged": 10
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2010,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 364,
+        "flagged": 1
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2011,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 361,
+        "review": 1,
+        "flagged": 3
+      },
+      "draws": 1145,
+      "winning_numbers": 20610
+    },
+    {
+      "year": 2012,
+      "checked_dates": 366,
+      "status_counts": {
+        "saved": 360,
+        "flagged": 6
+      },
+      "draws": 1150,
+      "winning_numbers": 20700
+    },
+    {
+      "year": 2013,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 365
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2014,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 363,
+        "flagged": 2
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2015,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 365
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2016,
+      "checked_dates": 366,
+      "status_counts": {
+        "saved": 365,
+        "flagged": 1
+      },
+      "draws": 1151,
+      "winning_numbers": 20718
+    },
+    {
+      "year": 2017,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 365
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2018,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 365
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2019,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 365
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2020,
+      "checked_dates": 366,
+      "status_counts": {
+        "saved": 338,
+        "no_draw": 28
+      },
+      "draws": 1062,
+      "winning_numbers": 19116
+    },
+    {
+      "year": 2021,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 260,
+        "no_draw": 105
+      },
+      "draws": 817,
+      "winning_numbers": 14706
+    },
+    {
+      "year": 2022,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 365
+      },
+      "draws": 1148,
+      "winning_numbers": 20664
+    },
+    {
+      "year": 2023,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 365
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2024,
+      "checked_dates": 366,
+      "status_counts": {
+        "saved": 366
+      },
+      "draws": 1150,
+      "winning_numbers": 20700
+    },
+    {
+      "year": 2025,
+      "checked_dates": 365,
+      "status_counts": {
+        "saved": 365
+      },
+      "draws": 1147,
+      "winning_numbers": 20646
+    },
+    {
+      "year": 2026,
+      "checked_dates": 294,
+      "status_counts": {
+        "saved": 294
+      },
+      "draws": 924,
+      "winning_numbers": 16632
+    }
+  ],
+  "status_counts": {
+    "flagged": 95,
+    "no_draw": 133,
+    "review": 2,
+    "saved": 6775
+  },
+  "province_date_draws": 21592,
+  "winning_numbers": 388656,
+  "source_html_bytes_uncompressed": 601887386,
+  "source_html_bytes_compressed": 135033424,
+  "project_disk_bytes": 216389174,
+  "verification": [
+    "SQLite integrity_check passed",
+    "All 7005 requested dates present exactly once",
+    "All yearly JSONL date coverage complete",
+    "All 7005 saved HTML hashes match database and exports",
+    "CSV numbers and loto endings match JSON exactly, including leading zeros",
+    "No duplicate number keys",
+    "All yearly raw HTML file counts match checked dates",
+    "Worker exited after finishing"
+  ],
+  "unparsed_dates": [
+    {
+      "date": "2008-09-02",
+      "error": "Incomplete or nonnumeric prize G.8: ",
+      "source_url": "https://xosodaiphat.com/xsmn-02-09-2008.html"
+    },
+    {
+      "date": "2011-02-03",
+      "error": "Incomplete or nonnumeric prize G.1: ",
+      "source_url": "https://xosodaiphat.com/xsmn-03-02-2011.html"
+    }
+  ],
+  "flagged_dates": [
+    {
+      "date": "2007-08-18",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-18-08-2007.html"
+    },
+    {
+      "date": "2007-08-25",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-25-08-2007.html"
+    },
+    {
+      "date": "2007-09-01",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-01-09-2007.html"
+    },
+    {
+      "date": "2007-09-08",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-08-09-2007.html"
+    },
+    {
+      "date": "2007-09-15",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-15-09-2007.html"
+    },
+    {
+      "date": "2007-09-22",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-22-09-2007.html"
+    },
+    {
+      "date": "2007-09-29",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-29-09-2007.html"
+    },
+    {
+      "date": "2007-10-06",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-06-10-2007.html"
+    },
+    {
+      "date": "2007-10-13",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-13-10-2007.html"
+    },
+    {
+      "date": "2007-10-20",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-20-10-2007.html"
+    },
+    {
+      "date": "2007-10-27",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-27-10-2007.html"
+    },
+    {
+      "date": "2007-11-03",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-03-11-2007.html"
+    },
+    {
+      "date": "2007-11-10",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-10-11-2007.html"
+    },
+    {
+      "date": "2007-11-17",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-17-11-2007.html"
+    },
+    {
+      "date": "2007-11-24",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-24-11-2007.html"
+    },
+    {
+      "date": "2007-12-01",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-01-12-2007.html"
+    },
+    {
+      "date": "2007-12-08",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-08-12-2007.html"
+    },
+    {
+      "date": "2007-12-15",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-15-12-2007.html"
+    },
+    {
+      "date": "2007-12-22",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-22-12-2007.html"
+    },
+    {
+      "date": "2007-12-29",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-29-12-2007.html"
+    },
+    {
+      "date": "2008-01-05",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-05-01-2008.html"
+    },
+    {
+      "date": "2008-01-12",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-12-01-2008.html"
+    },
+    {
+      "date": "2008-01-19",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-19-01-2008.html"
+    },
+    {
+      "date": "2008-01-26",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-26-01-2008.html"
+    },
+    {
+      "date": "2008-02-02",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-02-02-2008.html"
+    },
+    {
+      "date": "2008-02-09",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-09-02-2008.html"
+    },
+    {
+      "date": "2008-02-16",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-16-02-2008.html"
+    },
+    {
+      "date": "2008-02-23",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-23-02-2008.html"
+    },
+    {
+      "date": "2008-03-01",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-01-03-2008.html"
+    },
+    {
+      "date": "2008-03-08",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-08-03-2008.html"
+    },
+    {
+      "date": "2008-03-15",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-15-03-2008.html"
+    },
+    {
+      "date": "2008-03-22",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-22-03-2008.html"
+    },
+    {
+      "date": "2008-03-29",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-29-03-2008.html"
+    },
+    {
+      "date": "2008-04-05",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-05-04-2008.html"
+    },
+    {
+      "date": "2008-04-12",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-12-04-2008.html"
+    },
+    {
+      "date": "2008-04-19",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-19-04-2008.html"
+    },
+    {
+      "date": "2008-04-26",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-26-04-2008.html"
+    },
+    {
+      "date": "2008-05-03",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-03-05-2008.html"
+    },
+    {
+      "date": "2008-05-10",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-10-05-2008.html"
+    },
+    {
+      "date": "2008-05-17",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-17-05-2008.html"
+    },
+    {
+      "date": "2008-05-24",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-24-05-2008.html"
+    },
+    {
+      "date": "2008-05-31",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-31-05-2008.html"
+    },
+    {
+      "date": "2008-06-07",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-07-06-2008.html"
+    },
+    {
+      "date": "2008-06-14",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-14-06-2008.html"
+    },
+    {
+      "date": "2008-06-21",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-21-06-2008.html"
+    },
+    {
+      "date": "2008-06-28",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-28-06-2008.html"
+    },
+    {
+      "date": "2008-07-05",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-05-07-2008.html"
+    },
+    {
+      "date": "2008-07-12",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-12-07-2008.html"
+    },
+    {
+      "date": "2008-07-19",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-19-07-2008.html"
+    },
+    {
+      "date": "2008-07-26",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-26-07-2008.html"
+    },
+    {
+      "date": "2008-08-02",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-02-08-2008.html"
+    },
+    {
+      "date": "2008-08-09",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-09-08-2008.html"
+    },
+    {
+      "date": "2008-08-16",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-16-08-2008.html"
+    },
+    {
+      "date": "2008-08-23",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-23-08-2008.html"
+    },
+    {
+      "date": "2008-08-30",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-30-08-2008.html"
+    },
+    {
+      "date": "2008-09-06",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-06-09-2008.html"
+    },
+    {
+      "date": "2008-09-13",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-13-09-2008.html"
+    },
+    {
+      "date": "2008-09-20",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-20-09-2008.html"
+    },
+    {
+      "date": "2008-09-27",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-27-09-2008.html"
+    },
+    {
+      "date": "2008-10-04",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-04-10-2008.html"
+    },
+    {
+      "date": "2008-10-11",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-11-10-2008.html"
+    },
+    {
+      "date": "2008-10-18",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-18-10-2008.html"
+    },
+    {
+      "date": "2008-10-25",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-25-10-2008.html"
+    },
+    {
+      "date": "2008-11-01",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-01-11-2008.html"
+    },
+    {
+      "date": "2008-11-08",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-08-11-2008.html"
+    },
+    {
+      "date": "2008-11-15",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-15-11-2008.html"
+    },
+    {
+      "date": "2008-11-22",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-22-11-2008.html"
+    },
+    {
+      "date": "2008-11-29",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-29-11-2008.html"
+    },
+    {
+      "date": "2008-12-06",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-06-12-2008.html"
+    },
+    {
+      "date": "2008-12-13",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-13-12-2008.html"
+    },
+    {
+      "date": "2008-12-20",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-20-12-2008.html"
+    },
+    {
+      "date": "2008-12-27",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-27-12-2008.html"
+    },
+    {
+      "date": "2009-01-03",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-03-01-2009.html"
+    },
+    {
+      "date": "2009-01-10",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-10-01-2009.html"
+    },
+    {
+      "date": "2009-01-17",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-17-01-2009.html"
+    },
+    {
+      "date": "2009-02-14",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-14-02-2009.html"
+    },
+    {
+      "date": "2009-02-21",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-21-02-2009.html"
+    },
+    {
+      "date": "2009-02-28",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-28-02-2009.html"
+    },
+    {
+      "date": "2009-03-07",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-07-03-2009.html"
+    },
+    {
+      "date": "2009-03-14",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-14-03-2009.html"
+    },
+    {
+      "date": "2009-03-21",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-21-03-2009.html"
+    },
+    {
+      "date": "2009-03-28",
+      "flags": [
+        "Bình Phước: G.8: unexpected digit count in source",
+        "Bình Phước: G.7: unexpected digit count in source"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-28-03-2009.html"
+    },
+    {
+      "date": "2010-02-24",
+      "flags": [
+        "Đồng Nai: G.6: expected 3 numbers, source has 1",
+        "Đồng Nai: G.5: expected 1 numbers, source has 3"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-24-02-2010.html"
+    },
+    {
+      "date": "2011-03-27",
+      "flags": [
+        "Đà Lạt: G.6: expected 3 numbers, source has 1",
+        "Đà Lạt: G.5: expected 1 numbers, source has 3"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-27-03-2011.html"
+    },
+    {
+      "date": "2011-11-03",
+      "flags": [
+        "Bình Thuận: G.6: expected 3 numbers, source has 1",
+        "Bình Thuận: G.5: expected 1 numbers, source has 3"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-03-11-2011.html"
+    },
+    {
+      "date": "2011-11-28",
+      "flags": [
+        "TP.HCM: G.4: expected 7 numbers, source has 2",
+        "TP.HCM: G.3: expected 2 numbers, source has 1",
+        "TP.HCM: G.2: expected 1 numbers, source has 7"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-28-11-2011.html"
+    },
+    {
+      "date": "2012-04-27",
+      "flags": [
+        "Trà Vinh: G.3: expected 2 numbers, source has 1",
+        "Trà Vinh: G.2: expected 1 numbers, source has 2"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-27-04-2012.html"
+    },
+    {
+      "date": "2012-05-09",
+      "flags": [
+        "Cần Thơ: G.3: expected 2 numbers, source has 1",
+        "Cần Thơ: G.2: expected 1 numbers, source has 2"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-09-05-2012.html"
+    },
+    {
+      "date": "2012-07-18",
+      "flags": [
+        "Đồng Nai: G.4: expected 7 numbers, source has 1",
+        "Đồng Nai: G.3: expected 2 numbers, source has 7",
+        "Đồng Nai: G.2: expected 1 numbers, source has 2"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-18-07-2012.html"
+    },
+    {
+      "date": "2012-07-20",
+      "flags": [
+        "Trà Vinh: G.4: expected 7 numbers, source has 2",
+        "Trà Vinh: G.3: expected 2 numbers, source has 1",
+        "Trà Vinh: G.2: expected 1 numbers, source has 7"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-20-07-2012.html"
+    },
+    {
+      "date": "2012-08-31",
+      "flags": [
+        "Trà Vinh: G.6: expected 3 numbers, source has 1",
+        "Trà Vinh: G.5: expected 1 numbers, source has 3"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-31-08-2012.html"
+    },
+    {
+      "date": "2012-10-01",
+      "flags": [
+        "Đồng Tháp: G.4: expected 7 numbers, source has 2",
+        "Đồng Tháp: G.3: expected 2 numbers, source has 1",
+        "Đồng Tháp: G.2: expected 1 numbers, source has 7"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-01-10-2012.html"
+    },
+    {
+      "date": "2014-03-15",
+      "flags": [
+        "TP.HCM: G.4: expected 7 numbers, source has 2",
+        "TP.HCM: G.3: expected 2 numbers, source has 7"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-15-03-2014.html"
+    },
+    {
+      "date": "2014-04-12",
+      "flags": [
+        "TP.HCM: Source loto table differs from prize endings"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-12-04-2014.html"
+    },
+    {
+      "date": "2016-08-10",
+      "flags": [
+        "Đồng Nai: Source loto table differs from prize endings"
+      ],
+      "source_url": "https://xosodaiphat.com/xsmn-10-08-2016.html"
+    }
+  ]
+}
