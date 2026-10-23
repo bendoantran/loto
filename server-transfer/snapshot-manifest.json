@@ -1,0 +1,225 @@
+{
+  "schema": 1,
+  "data_version": "2c1037f153a3818ae1272614239bb85b7c9c82cac9a56cf8a3a3ac4fd9844a58",
+  "rows": 75424,
+  "archive_sha256": "83320456ad936d98e94c9ff100caf859e674fea376dd6f22b364dbdd2717e55e",
+  "parts": [
+    {
+      "name": "snapshot.part000",
+      "sha256": "4fc3916478d01942f7b60d5a51fef754ffb3ba195c4649882c2d4421a52c633f",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part001",
+      "sha256": "5891c725698eda19094911774cc077d06abab34717c79b65725586b720f69511",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part002",
+      "sha256": "34bb6833128432970794042a171845c192d416117b350b9d69937cd102c2e2a3",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part003",
+      "sha256": "d7ed12d9cd31c9bc88c5fca20a7b03974ba7b48f4264e99b077630399799ab3b",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part004",
+      "sha256": "d5d07395fea2a26daa773c769a812aa79c475d7e09f298c692794945a45e3eb0",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part005",
+      "sha256": "6dee7378f7326182cb976d8821ba022ced43b98b98820f0b35786762008e2dd5",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part006",
+      "sha256": "b6746a4b20b89af3f5d2483696989457fdca0b5415334ae44dd46bccf482ad78",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part007",
+      "sha256": "01daa9b179b036b4ce79592a13e8cc088d5b04fd3107ed0b0abea875b5443100",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part008",
+      "sha256": "4d624da798dc251471d95f16dec43d1cd4b3c537a7b12900c34205a70a8cb531",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part009",
+      "sha256": "dbfb96287b7ea7d9f4cbe9db24ca751a45555bda313304bd701758978a3c3afb",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part010",
+      "sha256": "dac9845a9f6a77152fc68149c38e5e1c7441f9ab53a0fa1198e6c719af522be0",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part011",
+      "sha256": "7aa55103d34a6417b6241c1b6387ae0e992c487e6383dd25ee2c1538369813e2",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part012",
+      "sha256": "c33586c8bcffac27bf81b0472c4428c223812fda1b565e50f4e1271b7a6a145e",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part013",
+      "sha256": "fd2175c52eaf5cdc91c7e693da604fe61a50cd4228245dc826cb1d206c7925f9",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part014",
+      "sha256": "502c12f72c9a684962c42b11fbd39d88e43925c5411f7ff9bd864cea3ff62d7f",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part015",
+      "sha256": "25b8c200b2eb3ffc8fa76f2a82d51acc381d9f9a8d73c65f34e0ff2a2f6bff87",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part016",
+      "sha256": "b1e7e1641647606c069ec5be1bf500d95ca65f5a5d3bbc0670d9fc6721042496",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part017",
+      "sha256": "45ab606817dfb022aca62f405938cacaca94a8989ca38ab71929e6faf82e3d00",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part018",
+      "sha256": "e32e89e26957a799ac7edd3a22ee01c9f9393513495c0014c57bfe207c96798a",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part019",
+      "sha256": "96867da74fdbdca47c95784af3e4ff380f183b68196761481d462fc6fcd4a861",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part020",
+      "sha256": "52c186a11003b0c836a53ba5812e3798ae15e3afff0e9c2a258faac8fbbbe34a",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part021",
+      "sha256": "7a2da1ae05e4a5f4ec0c2043946d6bb4329deb823ba4fe68050ffa59eeee254f",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part022",
+      "sha256": "d736fe372530a8d77147c2be47da64f7dd48cfe3efe917fd8aef968c4af86a2e",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part023",
+      "sha256": "2066c5148ffa13d52a82e165a91189ccba587ed45c6dc47e65dbe7a34f29a7b7",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part024",
+      "sha256": "5535f7c8f4d58a8ce1c4b2e59ce90af67eecd51c569e2148224b9e91a889233a",
+      "bytes": 524288
+    },
+    {
+      "name": "snapshot.part025",
+      "sha256": "470730229108a7b66e75fb4dca4b5f68fce1b9123829d103c778bfeb517972b1",
+      "bytes": 117950
+    }
+  ],
+  "files": {
+    "post-xsmt-20261022T1936/manifest.json": "2af68f8f5724df05636124f75b56358187c4e721535142d71b62ea5d1c1b2f25",
+    "post-xsmt-20261022T1936/records.jsonl": "b73e55d02a9ad7251cafbcca8f354a295b28153b2e7706955d38aa76522fe452",
+    "post-xsmt-20261022T1936/eligibility.jsonl": "299dd7f17459c1f7eb1b1844d476a1782cd9a13e0e055f60c9bc51f3104cddd7",
+    "native/OPENCL-COPYING": "6b10d78a1971cf0a97feb5140f0821cbe53cfd06771852eef7dc3bd7f771251e",
+    "native/libOpenCL.so.1": "e88280c5e4e47d79c898aa417fc5c82b493dccea167d746d53901c2f7a329af1",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2013/prizes.csv": "8c9f0a7868b00b8ff2a65bbe313d9b0cb21892ddfb3ff67a49303f8e58d4e0dd",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2013/results.jsonl": "ce2f409c0438f99ef8ea743aee7b49a146cda1d6ffcadd34b47579900bc5c0a7",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2026/prizes.csv": "83a4d0d42e28e95878ba172c2604b8c60c99fe02777c9797fa9a9956e92955fe",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2026/results.jsonl": "14d6e62f61c4b3da5cc2e31289fad997742f218fa3dcde89c0c09f73789d7282",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2020/prizes.csv": "83666ae53aec594e4041794a51da929949bbd4e8c7b2723e4b4531c06ac08146",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2020/results.jsonl": "b5d5a1da3d2375ae625d0164e6eec7328c0e43e71ce4369caa40f15bfb74e4be",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2016/prizes.csv": "69db28b26a2ba22544579a9609ef5f663631b235beb89d327b765e7780b91510",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2016/results.jsonl": "4561ae5dfb2892819fca75e1ae09379f07be1d7ddd1779f46bb918cb74435586",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2018/prizes.csv": "2243240433fc5eb33fe8826e62bc31c4901d12805f5ef04e06b44a357da5e7e7",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2018/results.jsonl": "2456704f0d9b59aee30450dffc1742b8d1e42874a7789301c5d6f722f79ef5ca",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2009/prizes.csv": "db7dba9a35de4ccab6a5a26ff8fc5cdc8aba6c4f54847a275022cec2fe5ef384",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2009/results.jsonl": "37e87a13f35d6a90f1e34d7ba61d8f1309796330e7ac2712851e51e4c369922d",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2014/prizes.csv": "dc905f1154351343ed76ab18e1f6838022b5f0439a55886a1c91d70a8819abb9",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2014/results.jsonl": "cd7d70deb5b4fa4b767b094906f0d6054e5ecec80334ab2a451e5674ac7e3315",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2019/prizes.csv": "80fa735d90e1aaa87c28774c5dd5f62d1c5716598924cc0cef0dcef2f23e8735",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2019/results.jsonl": "72b1f4c7fc562cbc05472067ead694ee59e71bbe0b08e5edf21b177fbe1b6949",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2022/prizes.csv": "25ee998a1b935370dd9d4709410e25c93ff8cfd40d5fd3bf50f3edd96d12c5ac",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2022/results.jsonl": "152db802c08d53f807b2a75f6db977ae0fe060d5e086d2447b4aa605eaf11b1d",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2015/prizes.csv": "00b308df84716f8c33ae6b48128273b3dfc6ee49e1ac70d01bf8362b4d6f813d",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2015/results.jsonl": "ba1212f7bbd2dce26f5ecdaeefc4f0830d157b01e04d314acad1466435fa3d20",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2023/prizes.csv": "886b48af842e16cf460a0ffbc87d0ceaf78111e5c4184050fe7c52bbe110ad71",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2023/results.jsonl": "d1e512e37efc0484d226f4f0d6cab0d438ccf6e55b629e0bb6676e6754c3425f",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2021/prizes.csv": "c19d4ba333c3775dcc118cd4bb09e5386cb4bf450a0a34e6857d8942d4280912",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2021/results.jsonl": "f2f86c49e72ba0019dceab5c7a615cedb68376a9d807fc0ca6f06a252134aaa1",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2008/prizes.csv": "5344f128deb9014edcaa028a615414bf01d9e1d8cb15d71577cde13e4ff29e24",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2008/results.jsonl": "ffea7cde244a112cb8df26a7a19a0a7fcba0a84be8936981f6f78139ce4d75e3",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2011/prizes.csv": "8d5a9f78811e3e8b1c1779680fc6ecf5cfa4cf3607fea4dbf2c0e9b186a091dc",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2011/results.jsonl": "a14dbcc36ea9a843d3c637350edfa803f30c763d95d8f7e889dba3dc726f01a4",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2010/prizes.csv": "57eca5fc48d1059029408050821ad11b09a187bc06d787b9e526f920c27c1863",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2010/results.jsonl": "8163921e1e4b5f3a85b703b236a8ad2d20566a8d3b8e0bdf0ee0724e58d3c759",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2007/prizes.csv": "7bda9b07ffd4ff7a8bd56608b2077650cab7f6a91bde7d1c2feaec0ca1cc8631",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2007/results.jsonl": "e0960ceec9d561376bfffe409dd1b2140f4ad15e226dee255a47b1a465800014",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2012/prizes.csv": "fa3cd6a64308272e5d12bfccbd52842298d27a08db87ffd693b57c74a0497eac",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2012/results.jsonl": "8857691de3b44025c7e3242d347a1f9df4755b0d7fae381a4b56995aa48dcf4d",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2024/prizes.csv": "2fadeaadb1db84ca49696ab594b82826d38f78434d70ac766e0d68978a5f3ef8",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2024/results.jsonl": "bbe17e2759b809cc51982c926faff611ef3b1b7e6a9ddfb537ea57a343468bff",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2025/prizes.csv": "cd85974e60861f2da575c5d968b2feaf01ec1b44e6bb7129437692af1efffcaa",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2025/results.jsonl": "19d47801fd22c4e0b644a176e031174ca90ad20a851561e0dbecfd420fb440ad",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2017/prizes.csv": "01e46c5315c1d302dfe1a866965825fcd73a77590f974d3e38dffc1cd16eb3e2",
+    "post-xsmt-20261022T1936/sources/xsmn/years/2017/results.jsonl": "78b573f22547c01cf33d73aa791f427615881e59c4ca35fa8c077e23da92bd5f",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2013/prizes.csv": "59dd19e1711d5834c4c2a283a6219aefbe25f382fbc7646db63274919fdb86d8",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2013/results.jsonl": "6b7e1181a8f7176f414fe9333db31f170d0e4607ab974dd2261e3c8c984083a3",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2026/prizes.csv": "a87c406f0cc27e7bc9c0bdb2a712b7598e468045bd9b2b3073e1dbfdde0752d6",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2026/results.jsonl": "774a96943bcc408bde60b2f1a77ec51042eb007190cc5017d231a30fea2af4c7",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2020/prizes.csv": "56e3f6ee4305e28e096883588a63c7a2d46cbbecf9d10a637c894c16567c30a2",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2020/results.jsonl": "8bee12c9d0db2be7ac7d7636cf1199d49f07c6bccc61ec4c2b33a8d00efa06b9",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2016/prizes.csv": "11fd11281de0c10f36928de7b2d40d73dfca54a440840d332182c9628bc42c39",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2016/results.jsonl": "e1478fb75b2f120c52fe7b637d27804aba47002e25f0767ac1d19996b8910267",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2018/prizes.csv": "1820f20779e3da07f42ffe55be7a90c69c6720bf49fe6ead70d4b6b7b48988e1",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2018/results.jsonl": "16ba36f74a8c08369ae541d700031697a38ad1a29dc45d7bcc0d8dc6f98f05d1",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2009/prizes.csv": "51c1928d362b19f30c3220dad7ca645abca97d1822e79e84259744c5e74ebaff",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2009/results.jsonl": "09a8b9636c5b0cc52e84960e67c9fec484462be89d29ccd3349965dc1649d6f1",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2014/prizes.csv": "99ebd33791ab99c98026c074f9ac273dcf16bfa3638f456ba13e827d52a88554",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2014/results.jsonl": "f8fea18ae0b8a0263b2cee97083b6a185ce38c88fd094af5dda3b2b64d8428b4",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2019/prizes.csv": "be6149fe722881a67d66e569b9adacb75ece80b5b328bdd719bdddc3487303d6",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2019/results.jsonl": "c0b668febab5aa84269bb9f61ba7a9535da1ccb10262af0d558f1a66ec50f68f",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2022/prizes.csv": "5f4e3672b0a2810bbebc36914b2a07b47e3081774fce4ee7cd4754bfdf54b385",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2022/results.jsonl": "341b66d1dd43a4d5dc8c61a3592b3c261824e5da332b52740cf6d8d55cda38aa",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2015/prizes.csv": "2e76fd0b8825f993fb74bc28a5ed9e1a4711e3886f70a55e6300b993560e7b43",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2015/results.jsonl": "470ab0caaa53f985d5f9cb6fa3f7bd46e139c36edebd718b28a3d32bc36c4b79",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2023/prizes.csv": "6de85ca9764beb21bb7886614a80145d3569b5456a2d6cf4ae9e5fcec3675d34",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2023/results.jsonl": "43a8794ac5714da4ab881127871d456a826287dc7462c24b2a666237e3c1cea9",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2021/prizes.csv": "82f35396a40c02dd7cb765ff72f5526234c0c8614042c578d3018d2626908b7d",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2021/results.jsonl": "7be16529c23b6773a47cf70a9d413fe618baf68debe438c3da6041c7ab7289d5",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2008/prizes.csv": "3a2d6e2998a540eabb14b4aeb02fdb85c4883088e79f723a225837ba9676451a",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2008/results.jsonl": "1180bbb6f91578b1771a0f1f08fe762347940550e1d101bfc4afaf6c6c889ccd",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2011/prizes.csv": "d69100d81cad1488b22e8b568f110cb11fae241dc9d69dbd97f7dede8e605941",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2011/results.jsonl": "3bd7e5f6f1f90c547d130ae600cc166160c42a4b12f12e091862fd5c469f040c",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2010/prizes.csv": "fbc47c1b92baa53662add88e0b099205081c0cde656e0205a1b0924b65d809fc",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2010/results.jsonl": "6eb97ef81ba80627181b4a3bc8e930a3e75fd47eee2584d41eb481c4e9d67dc9",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2007/prizes.csv": "fca052aff78ddab4047532b22af05e4c2a86152523714a6a739a66996c1c2528",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2007/results.jsonl": "da9098bfb03250b5e7cae8e994749f1ff745a48fc2521829a2674acbaaea2f06",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2012/prizes.csv": "383d6e58374f4f90081ddc1f5e958e66675fdc50c12f63a8288fc64fb555a403",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2012/results.jsonl": "c7ee38c5ce152a9c3e1289f9949ba7b5a08cd902d496de035463bff056ceb584",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2024/prizes.csv": "6962752f8794665ff7341ed1963f88f030e1ab09b4b90546b2bd06e08eca0b65",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2024/results.jsonl": "4d7c13680fcbeb0a8d4377de04ccf9431c1d532815b6261e475072df4fbb949b",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2025/prizes.csv": "3da0a87cf178704975205bf94ccbe1ec0faffc218219cdb25a7a801c534c4f59",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2025/results.jsonl": "3ce14518bd584c85a8537a7998b48b3fb64aac3f47dc62853aaeecab799f39b2",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2017/prizes.csv": "4057b4eb189b15b7af67007a4d86cf9ed5442c853e39b72a2f6d9262a4aa9d3f",
+    "post-xsmt-20261022T1936/sources/xsmt/years/2017/results.jsonl": "7a6f9be0f825a0a6ebf39ee94bf4058d31c3155faa01adc34c59e6b0c4d525a1"
+  }
+}

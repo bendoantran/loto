@@ -44,3 +44,5 @@ class EnsembleTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             result = tune(qs, np.arange(24), evaluate, "sqlite:///" + str(Path(temp) / "study.sqlite3"), "smoke", trials=1, family="tree")
             self.assertEqual(result["trials"], 1)
+            resumed = tune(qs, np.arange(24), evaluate, "sqlite:///" + str(Path(temp) / "study.sqlite3"), "smoke", trials=1, family="tree")
+            self.assertEqual(resumed["trials"], 1, "Resume must not add trials beyond the fixed total budget")

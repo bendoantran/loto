@@ -23,4 +23,4 @@ def export_forecasts(folder, records, top_k=10, unavailable=()):
                 writer.writerow({"forecast_id": record["id"], **{key: q[key] for key in ("region", "province", "prize", "date", "origin", "horizon")},
                     **{key: meta[key] for key in ("day_index", "model_version", "latest_input_date", "forecast_timestamp", "baseline_status")},
                     "training_cutoff": meta["model_training_cutoff"], "rank": rank, "label": f"{k:02d}", "probability": record["probabilities"][k]})
-    (folder / "forecasts.json").write_text(json.dumps({"forecasts": exported, "unavailable": list(unavailable)}, ensure_ascii=False, indent=2))
+    (folder / "forecasts.json").write_text(json.dumps({"forecasts": exported, "unavailable": list(unavailable)}, ensure_ascii=False, indent=2), encoding="utf-8")

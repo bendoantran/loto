@@ -2,9 +2,11 @@
 
 Private repository: **https://github.com/bendoantran/loto**.
 
+**Training server, no sudo:** see [SERVER-START.md](SERVER-START.md). The server-ready branch includes the frozen completed XSMN/XSMT modeling snapshot in checksummed chunks. Clone `codex/past-only-prediction`, run `bash setup-server.sh`, then `./loto doctor --device cuda`. Setup downloads pinned Python/packages into this directory and starts no training.
+
 This is the full completed Southern Vietnam lottery archive, together with the exact extraction method, a restorable checkpoint, and Windows/Kubuntu controls. Start with **[KUBUNTU_AGENT_HANDOFF.md](KUBUNTU_AGENT_HANDOFF.md)** for the detailed migration procedure and a ready-to-use AI-agent prompt.
 
-**New Kubuntu implementation test:** [XSMT_KUBUNTU_CHALLENGE.md](XSMT_KUBUNTU_CHALLENGE.md) assigns the miền Trung scraper, with fixed source fixtures, exact output graders, interruption tests and an evidence-based score. The Kubuntu agent must implement XSMT; the existing collector still defaults to XSMN.
+**XSMT collection:** the collector now accepts `--region xsmt`, while XSMN remains the default. See [XSMT_RUNBOOK.md](XSMT_RUNBOOK.md) for separate roots, controls and supervision, and [XSMT_ACCEPTANCE_REPORT.md](XSMT_ACCEPTANCE_REPORT.md) for actual live benchmark and recovery evidence. [XSMT_KUBUNTU_CHALLENGE.md](XSMT_KUBUNTU_CHALLENGE.md) retains the original acceptance assignment and frozen assessment kit. Full historical XSMT collection is separately checkpointed and may still be running; the pilot is not proof of full-history completion.
 
 **Prediction implementation:** [number_prediction/README.md](number_prediction/README.md) documents the isolated six-stage prediction pipeline, verified data snapshots, model families, chronological evaluation and portable CPU tools. [number_prediction/IMPLEMENTATION_PROGRESS.md](number_prediction/IMPLEMENTATION_PROGRESS.md) separates actual local pilot evidence from pending full server training, final-test scoring and Windows acceptance. The archive tooling remains standard-library-only.
 
@@ -51,7 +53,7 @@ For supervised reboot/login resume and quiet 30-minute monitoring, follow the sy
 
 One HTTP request at a time; ascending dates and years; 1.5-second rest after successful requests; 20-second HTTP timeout; network backoff of 5, 10, 20, 40, then 60 seconds; SQLite WAL/FULL commits after every date; cached HTML before parsing; no repeat downloads of committed dates; repeated numbers and leading zeros; all quality states and original notices; yearly export refresh every 10 dates and on year completion or graceful stop.
 
-The parser is unchanged. Platform changes are limited to POSIX locking, graceful SIGTERM handling, and the additional migration/control/monitoring tools. No third-party Python packages are needed.
+XSMN numeric extraction and frozen archive assets are preserved. Region-aware source/heading guards, XSMT province-loto association, export recovery after a crash, and separate regional controls extend the collector. No third-party Python packages are needed.
 
 ## Repository contents
 

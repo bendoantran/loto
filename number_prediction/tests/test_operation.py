@@ -69,6 +69,7 @@ class OperationTests(unittest.TestCase):
                     np.testing.assert_allclose(p, loaded.predict([qs[i] for i in valid]), atol=1e-6)
                     if family == "stack":
                         self.assertTrue(all(f["train_label_max"] < f["valid_origin_min"] for f in model.fold_evidence))
+                        self.assertEqual(model.fold_evidence, loaded.fold_evidence)
 
     def test_repeated_null_and_cross_prize_dependency(self):
         report = null_simulations(repetitions=8)

@@ -1,0 +1,912 @@
+{
+  "recorded_at_utc": "2026-10-22T15:04:03+00:00",
+  "environment": {
+    "os_release": "PRETTY_NAME=\"Ubuntu 26.04.1 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04.1 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+    "python": "3.12.9 | packaged by conda-forge | (main, Mar  4 2025, 22:48:41) [GCC 13.3.0]",
+    "kernel": "7.0.0-38-generic",
+    "desktop": "KDE",
+    "session": "wayland"
+  },
+  "base_code_commit": "a64c1b718dba16d084de1e571b9693b2a3e8e94c",
+  "implementation_committed": false,
+  "source_file_sha256": {
+    "history.py": "5c7f07fcee4506232312866849beb07218f7fcc750bdfc5f016e4ff5764e4803",
+    "regions.py": "9c2d0fc31c5c2fa6edeb91233c0ae93229553c3b8a648c5ecb1088543cc3a309",
+    "scrape.py": "02a8fe40e868431d2a0771d5c82dfc9fb47bde871452a7c00398bed8527e6ef0",
+    "test_history.py": "70b0b1ec4052105ed9aa3952822fc2810d5f7c89685b8bd546bc58dcdab14143",
+    "test_portability.py": "dd5040326b72f439c78dd7a5590281ea9c297535f07e77bd029145c388effae1",
+    "test_xsmt.py": "77adc00873a25e1e019c93315b79f69356831bf02f7d9b14bddc3ebe00a35b24",
+    "test_xsmt_recovery.py": "0bcbe00c2c199fefa89fb71bb16b4d881b93fe9aaa6bd775388584bb0578f47a",
+    "test_xsmt_reference.py": "49f14396a8339f7ea832f12f9075d33df60fe129791052fc2bcebeeb8c53a863",
+    "tools/__init__.py": "e8238a62ca60676d0e56fcc3631febbf012ff6774e00ef31c52b0bfefeeedf95",
+    "tools/check_xsmt_benchmark.py": "d1883a45eec4b2f0407fc7d8fa92e8862813c6300bbdd0186e98ff7ee98a1266",
+    "tools/control.py": "cb61fa6371ac1b40b19dda14757312a5656ad87b9589fceaf007af492d4016ca",
+    "tools/install_service.py": "57d3a14714e08ed816e2b752cfe4d2136b9c611b0caac329289a64c9678f26e6",
+    "tools/monitor.py": "5218c95bb25139914ecbfe8480d0fd06ca0c9cc40c84a836d882d5ed706ee64f",
+    "tools/probe_xsmt_history.py": "0c5ae1b1fb12e19cdf5070e8a1fce743e0179064a0b6556a804ac1a1495d4815",
+    "tools/prove_xsmt_recovery.py": "b05d93defa862dfb297f10527a62af4f75a8e61f9f1d759283e01699af7cad16",
+    "tools/restore_snapshot.py": "2b2ea147f8c83e7cae58a796ddb8da993117d6abf042f954e21aad773afd0edc",
+    "tools/scrape_region.py": "a9d4420b2d8938d87e37656811298d2fc9aa68159e0d88a87cdc091315266dd2",
+    "tools/verify_archive.py": "10e96b67ab2ab557fd57f42a6b4703e4beabe4c27ad63aaf2a310aa863d91346"
+  },
+  "repository_visibility": "private (confirmed through GitHub connector after implementation)",
+  "baseline_xsmn": {
+    "region": "xsmn",
+    "verified_at_utc": "2026-10-22T15:02:08+00:00",
+    "integrity": "ok",
+    "start": "2007-08-18",
+    "end": "2026-10-21",
+    "checked_dates": 7005,
+    "province_date_draws": 21592,
+    "winning_numbers": 388656,
+    "status_counts": {
+      "flagged": 95,
+      "saved": 6775,
+      "review": 2,
+      "no_draw": 133
+    },
+    "years": [
+      {
+        "year": 2007,
+        "dates": 136,
+        "winning_numbers": 7704
+      },
+      {
+        "year": 2008,
+        "dates": 366,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2009,
+        "dates": 365,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2010,
+        "dates": 365,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2011,
+        "dates": 365,
+        "winning_numbers": 20610
+      },
+      {
+        "year": 2012,
+        "dates": 366,
+        "winning_numbers": 20700
+      },
+      {
+        "year": 2013,
+        "dates": 365,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2014,
+        "dates": 365,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2015,
+        "dates": 365,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2016,
+        "dates": 366,
+        "winning_numbers": 20718
+      },
+      {
+        "year": 2017,
+        "dates": 365,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2018,
+        "dates": 365,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2019,
+        "dates": 365,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2020,
+        "dates": 366,
+        "winning_numbers": 19116
+      },
+      {
+        "year": 2021,
+        "dates": 365,
+        "winning_numbers": 14706
+      },
+      {
+        "year": 2022,
+        "dates": 365,
+        "winning_numbers": 20664
+      },
+      {
+        "year": 2023,
+        "dates": 365,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2024,
+        "dates": 366,
+        "winning_numbers": 20700
+      },
+      {
+        "year": 2025,
+        "dates": 365,
+        "winning_numbers": 20646
+      },
+      {
+        "year": 2026,
+        "dates": 294,
+        "winning_numbers": 16632
+      }
+    ]
+  },
+  "offline_tests": {
+    "count": 36,
+    "passed": true,
+    "log": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/tests.log"
+  },
+  "regional_page": {
+    "region": "xsmt",
+    "source_url": "https://xosodaiphat.com/xsmt-xo-so-mien-trung.html",
+    "fetched_at_utc": "2026-10-22T14:56:02+00:00",
+    "source_sha256": "35573e22f082726fb9abd52ad4d90c05834802c232998b6756d4a868bc5b00af",
+    "date_range": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "checked_dates": 7,
+    "draw_count": 17,
+    "number_count": 306
+  },
+  "pilot": {
+    "case": "pilot",
+    "region": "xsmt",
+    "passed": true,
+    "dates": 7,
+    "province_date_draws": 17,
+    "winning_numbers": 306
+  },
+  "year_boundary": {
+    "case": "year-boundary",
+    "region": "xsmt",
+    "passed": true,
+    "dates": 2,
+    "province_date_draws": 5,
+    "winning_numbers": 90
+  },
+  "live_daily_requests": {
+    "xsmt-pilot": [
+      {
+        "date": "2026-10-16",
+        "status": "saved",
+        "attempts": 1,
+        "source_url": "https://xosodaiphat.com/xsmt-16-10-2026.html",
+        "fetched_at": "2026-10-22T14:57:15+00:00",
+        "sha256": "9c0a467cd8cc98439280f7e7134d8488ce640080621b086878488ce4401613ff",
+        "draw_count": 2,
+        "number_count": 36
+      },
+      {
+        "date": "2026-10-17",
+        "status": "saved",
+        "attempts": 1,
+        "source_url": "https://xosodaiphat.com/xsmt-17-10-2026.html",
+        "fetched_at": "2026-10-22T14:57:17+00:00",
+        "sha256": "8b5f3b15b5cf2d02ccd11a3b3e03b7a0862f16ccd0659fe11bad76e2f061932b",
+        "draw_count": 3,
+        "number_count": 54
+      },
+      {
+        "date": "2026-10-18",
+        "status": "saved",
+        "attempts": 1,
+        "source_url": "https://xosodaiphat.com/xsmt-18-10-2026.html",
+        "fetched_at": "2026-10-22T14:57:19+00:00",
+        "sha256": "74396b21ec83b163dd15d5670d657d3f1587b7a73de5991fe4df792929bad013",
+        "draw_count": 3,
+        "number_count": 54
+      },
+      {
+        "date": "2026-10-19",
+        "status": "saved",
+        "attempts": 1,
+        "source_url": "https://xosodaiphat.com/xsmt-19-10-2026.html",
+        "fetched_at": "2026-10-22T14:57:21+00:00",
+        "sha256": "f4371d718def1caee9bdde6c5c30740dab2380de5da68302fcaa91f25acbb7d0",
+        "draw_count": 2,
+        "number_count": 36
+      },
+      {
+        "date": "2026-10-20",
+        "status": "saved",
+        "attempts": 1,
+        "source_url": "https://xosodaiphat.com/xsmt-20-10-2026.html",
+        "fetched_at": "2026-10-22T14:57:24+00:00",
+        "sha256": "03ac637747079ea534454a30f92bdf8ce1c416c3d5d3b0cbd1aeb14331544b39",
+        "draw_count": 2,
+        "number_count": 36
+      },
+      {
+        "date": "2026-10-21",
+        "status": "saved",
+        "attempts": 1,
+        "source_url": "https://xosodaiphat.com/xsmt-21-10-2026.html",
+        "fetched_at": "2026-10-22T14:57:26+00:00",
+        "sha256": "ce6dd9b3d9a8b2a16c71a64905c2cbbec111ce443ff7c8913cf89a45bf32f581",
+        "draw_count": 2,
+        "number_count": 36
+      },
+      {
+        "date": "2026-10-22",
+        "status": "saved",
+        "attempts": 1,
+        "source_url": "https://xosodaiphat.com/xsmt-22-10-2026.html",
+        "fetched_at": "2026-10-22T14:57:28+00:00",
+        "sha256": "b6225ecabef06a969d4b5e92fff192d5ad926dba51be1d446cd9ef05637635b0",
+        "draw_count": 3,
+        "number_count": 54
+      }
+    ],
+    "xsmt-boundary": [
+      {
+        "date": "2025-12-31",
+        "status": "saved",
+        "attempts": 1,
+        "source_url": "https://xosodaiphat.com/xsmt-31-12-2025.html",
+        "fetched_at": "2026-10-22T14:57:48+00:00",
+        "sha256": "53eeacb3089ca281a15e55ea7f31d025b8f17189e74aef30c79f9ef0fc5283e7",
+        "draw_count": 2,
+        "number_count": 36
+      },
+      {
+        "date": "2026-01-01",
+        "status": "saved",
+        "attempts": 1,
+        "source_url": "https://xosodaiphat.com/xsmt-01-01-2026.html",
+        "fetched_at": "2026-10-22T14:57:51+00:00",
+        "sha256": "51dafb21ee04463d51444a7c541902d78c45c90efbb09e68a4d13759400267f8",
+        "draw_count": 3,
+        "number_count": 54
+      }
+    ]
+  },
+  "recovery": {
+    "transport": "OFFLINE frozen fixture responses; not live requests",
+    "retry_clock": "mocked; production defaults unchanged",
+    "physical_reboot_tested": false,
+    "restart_after_two_commits": {
+      "passed": true,
+      "request_dates": [
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "first_hashes_unchanged": {
+        "2026-10-17.html.gz": "222c4e37b9ba89abea4a4c20e03de805d5547d13eaa4ada1a2cf42b0bb794c62",
+        "2026-10-16.html.gz": "6c5dd9c8c90dd56d920418d441c795f838e07d6c1b195545b67f2465f4d15936"
+      }
+    },
+    "crash_after_raw_before_commit": {
+      "passed": true,
+      "exit_code": 71,
+      "requests_total": 1,
+      "cached_response_reused": true
+    },
+    "crash_after_commit_before_export": {
+      "passed": true,
+      "exit_code": 72,
+      "request_dates": [
+        "2025-12-31",
+        "2026-01-01"
+      ],
+      "previous_year_export_rebuilt_before_next_request": true
+    },
+    "two_failures_then_recovery": {
+      "passed": true,
+      "attempts": 3,
+      "retry_delays_seconds": [
+        5.0,
+        10.0
+      ],
+      "numbers": 36
+    },
+    "durable_stop": {
+      "passed": true,
+      "separate_process_restart_requests": 0,
+      "monitor_restart_calls": 0,
+      "stop_persists": true
+    },
+    "linux_cross_process_lock": {
+      "passed": true,
+      "second_process_returncode": 1,
+      "refusal": "A collector is already running for this project"
+    },
+    "passed": true
+  },
+  "historical_discovery": [
+    {
+      "date": "2000-01-01",
+      "source_url": "https://xosodaiphat.com/xsmt-01-01-2000.html",
+      "fetched_at_utc": "2026-10-22T14:58:19+00:00",
+      "sha256": "f1f46a3c33ea6cc7770d2d81e63fdb89853f3e3d7984c4ac469364531e206244",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2000-01-01.html.gz",
+      "draw_count": 0,
+      "number_count": 0,
+      "status": "unavailable",
+      "flags": [],
+      "note": "Source explicitly says this date is not archived."
+    },
+    {
+      "date": "2005-01-01",
+      "source_url": "https://xosodaiphat.com/xsmt-01-01-2005.html",
+      "fetched_at_utc": "2026-10-22T14:58:21+00:00",
+      "sha256": "4c3f75774e269e54695086d8795472d16501eb4b0c7c3d5a1c96d8603bbdd12d",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2005-01-01.html.gz",
+      "draw_count": 0,
+      "number_count": 0,
+      "status": "unavailable",
+      "flags": [],
+      "note": "Source explicitly says this date is not archived."
+    },
+    {
+      "date": "2007-01-01",
+      "source_url": "https://xosodaiphat.com/xsmt-01-01-2007.html",
+      "fetched_at_utc": "2026-10-22T14:58:23+00:00",
+      "sha256": "ec6f7400b28b4cc61e7e8001f1dc88b98fe82bc37d8f76b8385f5a2e62cd1aa6",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-01-01.html.gz",
+      "draw_count": 0,
+      "number_count": 0,
+      "status": "unavailable",
+      "flags": [],
+      "note": "Source explicitly says this date is not archived."
+    },
+    {
+      "date": "2007-08-01",
+      "source_url": "https://xosodaiphat.com/xsmt-01-08-2007.html",
+      "fetched_at_utc": "2026-10-22T14:58:25+00:00",
+      "sha256": "2d32ab2deb2df527461aa2144825b54c71c90aa45001404e46ef86293baffece",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-01.html.gz",
+      "draw_count": 0,
+      "number_count": 0,
+      "status": "unavailable",
+      "flags": [],
+      "note": "Source explicitly says this date is not archived."
+    },
+    {
+      "date": "2007-08-09",
+      "source_url": "https://xosodaiphat.com/xsmt-09-08-2007.html",
+      "fetched_at_utc": "2026-10-22T14:59:13+00:00",
+      "sha256": "334cf5a7373924af32467e55c7ea9cf764b1637aa6eaf9b7f4814797545c7819",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-09.html.gz",
+      "draw_count": 0,
+      "number_count": 0,
+      "status": "unavailable",
+      "flags": [],
+      "note": "Source explicitly says this date is not archived."
+    },
+    {
+      "date": "2007-08-13",
+      "source_url": "https://xosodaiphat.com/xsmt-13-08-2007.html",
+      "fetched_at_utc": "2026-10-22T14:59:15+00:00",
+      "sha256": "42ad298888b15e57739b45c726516439e683f3e06a93ebf69a199d907b7f231f",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-13.html.gz",
+      "draw_count": 0,
+      "number_count": 0,
+      "status": "unavailable",
+      "flags": [],
+      "note": "Source explicitly says this date is not archived."
+    },
+    {
+      "date": "2007-08-15",
+      "source_url": "https://xosodaiphat.com/xsmt-15-08-2007.html",
+      "fetched_at_utc": "2026-10-22T14:59:17+00:00",
+      "sha256": "a820f6808ce74edb70a41810c7075b0f87ecff5fa89a726cd21b02adc4ecbb02",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-15.html.gz",
+      "draw_count": 0,
+      "number_count": 0,
+      "status": "unavailable",
+      "flags": [],
+      "note": "Source explicitly says this date is not archived."
+    },
+    {
+      "date": "2007-08-16",
+      "source_url": "https://xosodaiphat.com/xsmt-16-08-2007.html",
+      "fetched_at_utc": "2026-10-22T14:59:19+00:00",
+      "sha256": "5db5bf6d6f1d3af62cb7143e8552346dfb9a01d1027748270d715a0305023c70",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-16.html.gz",
+      "draw_count": 0,
+      "number_count": 0,
+      "status": "unavailable",
+      "flags": [],
+      "note": "Source explicitly says this date is not archived."
+    },
+    {
+      "date": "2007-08-17",
+      "source_url": "https://xosodaiphat.com/xsmt-17-08-2007.html",
+      "fetched_at_utc": "2026-10-22T14:59:22+00:00",
+      "sha256": "1ae0e64b2f7b9b1a67fd5de2edd2e0af7464f4b0bb37627c6a2c0ff05c7bb239",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-17.html.gz",
+      "draw_count": 0,
+      "number_count": 0,
+      "status": "unavailable",
+      "flags": [],
+      "note": "Source explicitly says this date is not archived."
+    },
+    {
+      "date": "2007-08-18",
+      "source_url": "https://xosodaiphat.com/xsmt-18-08-2007.html",
+      "fetched_at_utc": "2026-10-22T14:59:24+00:00",
+      "sha256": "d809d8c0bc7f5ff020859120e60559c8c12774bdf454545a7df56fc564613d86",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-18.html.gz",
+      "draw_count": 3,
+      "number_count": 54,
+      "status": "saved",
+      "flags": []
+    },
+    {
+      "date": "2007-08-19",
+      "source_url": "https://xosodaiphat.com/xsmt-19-08-2007.html",
+      "fetched_at_utc": "2026-10-22T14:59:26+00:00",
+      "sha256": "abd30727c6807a16431b53475940529afc7acbe673f7ff3de13e986a4bf59cf7",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-19.html.gz",
+      "draw_count": 2,
+      "number_count": 36,
+      "status": "saved",
+      "flags": []
+    },
+    {
+      "date": "2007-08-20",
+      "source_url": "https://xosodaiphat.com/xsmt-20-08-2007.html",
+      "fetched_at_utc": "2026-10-22T14:59:28+00:00",
+      "sha256": "3c677b37c48d3e9ebb1dd86a42cbf619d58bd20838ce0ebdeff4d6de2d705594",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-20.html.gz",
+      "draw_count": 2,
+      "number_count": 36,
+      "status": "saved",
+      "flags": []
+    },
+    {
+      "date": "2007-09-01",
+      "source_url": "https://xosodaiphat.com/xsmt-01-09-2007.html",
+      "fetched_at_utc": "2026-10-22T14:58:28+00:00",
+      "sha256": "cc25a7fe90368f6ef0e2ab4d6db96c77d68961373fd19e547a385d96af8c02b7",
+      "raw_path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-09-01.html.gz",
+      "draw_count": 3,
+      "number_count": 54,
+      "status": "saved",
+      "flags": []
+    }
+  ],
+  "full_collection_manifest": {
+    "region": "xsmt",
+    "start": "2007-08-18",
+    "end": "2026-10-22",
+    "total_days": 7006,
+    "frozen_at_utc": "2026-10-22T15:00:02+00:00",
+    "earliest_verified_available_date": "2007-08-18",
+    "boundary_method": "Independent XSMT coarse annual probes, then August probes. 2007-08-17 explicitly unavailable; 2007-08-18/19/20 contain validated results.",
+    "uncertainty": "Earlier dates were sampled, not exhaustively enumerated; an isolated older available page cannot be ruled out. This is the earliest verified result, not proof of a global source minimum.",
+    "discovery_records": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery",
+    "seeded_live_pages": {
+      "2007-08-18": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-18.html.gz",
+        "fetched_at_utc": "2026-10-22T14:59:24+00:00",
+        "sha256": "d809d8c0bc7f5ff020859120e60559c8c12774bdf454545a7df56fc564613d86",
+        "origin": "live discovery"
+      },
+      "2007-08-19": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-19.html.gz",
+        "fetched_at_utc": "2026-10-22T14:59:26+00:00",
+        "sha256": "abd30727c6807a16431b53475940529afc7acbe673f7ff3de13e986a4bf59cf7",
+        "origin": "live discovery"
+      },
+      "2007-08-20": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-08-20.html.gz",
+        "fetched_at_utc": "2026-10-22T14:59:28+00:00",
+        "sha256": "3c677b37c48d3e9ebb1dd86a42cbf619d58bd20838ce0ebdeff4d6de2d705594",
+        "origin": "live discovery"
+      },
+      "2007-09-01": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-evidence/discovery/2007-09-01.html.gz",
+        "fetched_at_utc": "2026-10-22T14:58:28+00:00",
+        "sha256": "cc25a7fe90368f6ef0e2ab4d6db96c77d68961373fd19e547a385d96af8c02b7",
+        "origin": "live discovery"
+      },
+      "2026-10-16": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-pilot/years/2026/raw/2026-10-16.html.gz",
+        "fetched_at_utc": "2026-10-22T14:57:15+00:00",
+        "sha256": "9c0a467cd8cc98439280f7e7134d8488ce640080621b086878488ce4401613ff",
+        "origin": "live xsmt-pilot"
+      },
+      "2026-10-17": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-pilot/years/2026/raw/2026-10-17.html.gz",
+        "fetched_at_utc": "2026-10-22T14:57:17+00:00",
+        "sha256": "8b5f3b15b5cf2d02ccd11a3b3e03b7a0862f16ccd0659fe11bad76e2f061932b",
+        "origin": "live xsmt-pilot"
+      },
+      "2026-10-18": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-pilot/years/2026/raw/2026-10-18.html.gz",
+        "fetched_at_utc": "2026-10-22T14:57:19+00:00",
+        "sha256": "74396b21ec83b163dd15d5670d657d3f1587b7a73de5991fe4df792929bad013",
+        "origin": "live xsmt-pilot"
+      },
+      "2026-10-19": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-pilot/years/2026/raw/2026-10-19.html.gz",
+        "fetched_at_utc": "2026-10-22T14:57:21+00:00",
+        "sha256": "f4371d718def1caee9bdde6c5c30740dab2380de5da68302fcaa91f25acbb7d0",
+        "origin": "live xsmt-pilot"
+      },
+      "2026-10-20": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-pilot/years/2026/raw/2026-10-20.html.gz",
+        "fetched_at_utc": "2026-10-22T14:57:24+00:00",
+        "sha256": "03ac637747079ea534454a30f92bdf8ce1c416c3d5d3b0cbd1aeb14331544b39",
+        "origin": "live xsmt-pilot"
+      },
+      "2026-10-21": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-pilot/years/2026/raw/2026-10-21.html.gz",
+        "fetched_at_utc": "2026-10-22T14:57:26+00:00",
+        "sha256": "ce6dd9b3d9a8b2a16c71a64905c2cbbec111ce443ff7c8913cf89a45bf32f581",
+        "origin": "live xsmt-pilot"
+      },
+      "2026-10-22": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-pilot/years/2026/raw/2026-10-22.html.gz",
+        "fetched_at_utc": "2026-10-22T14:57:28+00:00",
+        "sha256": "b6225ecabef06a969d4b5e92fff192d5ad926dba51be1d446cd9ef05637635b0",
+        "origin": "live xsmt-pilot"
+      },
+      "2026-01-01": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-boundary/years/2026/raw/2026-01-01.html.gz",
+        "fetched_at_utc": "2026-10-22T14:57:51+00:00",
+        "sha256": "51dafb21ee04463d51444a7c541902d78c45c90efbb09e68a4d13759400267f8",
+        "origin": "live xsmt-boundary"
+      },
+      "2025-12-31": {
+        "path": "/home/ldoan4/Documents/Codex/2026-10-22/git/work/xsmt-boundary/years/2025/raw/2025-12-31.html.gz",
+        "fetched_at_utc": "2026-10-22T14:57:48+00:00",
+        "sha256": "53eeacb3089ca281a15e55ea7f31d025b8f17189e74aef30c79f9ef0fc5283e7",
+        "origin": "live xsmt-boundary"
+      }
+    }
+  },
+  "full_progress_snapshot": {
+    "region": "xsmt",
+    "updated_at_utc": "2026-10-22T15:04:02+00:00",
+    "state": "running",
+    "current_date": "2007-11-30",
+    "message": null,
+    "start": "2007-08-18",
+    "end": "2026-10-22",
+    "total_days": 7006,
+    "processed_days": 105,
+    "percent": 1.5,
+    "saved_days": 105,
+    "flagged_days": 0,
+    "unavailable_days": 0,
+    "review_days": 0,
+    "no_draw_days": 0,
+    "years": [
+      {
+        "year": 2007,
+        "total": 136,
+        "saved": 105,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 31,
+        "draws": 240,
+        "numbers": 4320,
+        "processed": 105,
+        "state": "in_progress"
+      },
+      {
+        "year": 2008,
+        "total": 366,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 366,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2009,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2010,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2011,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2012,
+        "total": 366,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 366,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2013,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2014,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2015,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2016,
+        "total": 366,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 366,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2017,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2018,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2019,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2020,
+        "total": 366,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 366,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2021,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2022,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2023,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2024,
+        "total": 366,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 366,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2025,
+        "total": 365,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 365,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      },
+      {
+        "year": 2026,
+        "total": 295,
+        "saved": 0,
+        "flagged": 0,
+        "unavailable": 0,
+        "review": 0,
+        "no_draw": 0,
+        "remaining": 295,
+        "draws": 0,
+        "numbers": 0,
+        "processed": 0,
+        "state": "pending"
+      }
+    ]
+  },
+  "full_partial_audit": {
+    "checked_at_utc": "2026-10-22T15:02:23+00:00",
+    "checkpoint_integrity": "ok",
+    "committed_raw_hashes_checked": 60,
+    "latest_committed_date": "2007-10-16",
+    "numbers": 2466,
+    "status_counts": {
+      "pending": 6946,
+      "saved": 60
+    },
+    "scope": "Consistent read-only snapshot of committed rows; full archive audit awaits completion."
+  },
+  "services": "Id=loto-xsmt-history.service\nActiveState=active\nSubState=running\nMainPID=32767\n\nId=loto-xsmt-monitor.timer\nActiveState=active\nSubState=waiting\nNEXT                         LEFT LAST                              PASSED UNIT                    ACTIVATES\nThu 2026-10-22 11:30:16 EDT 26min Thu 2026-10-22 11:00:16 EDT 3min 46s ago loto-xsmt-monitor.timer loto-xsmt-monitor.service\n\n1 timers listed.\nLinger=no\n",
+  "unit_validation_exit_code": 0,
+  "unit_validation_log": "/usr/lib/systemd/user/spice-vdagent.service:23: Unknown key 'StandardError' in section [Install], ignoring.\n",
+  "limits": [
+    "Full XSMT history is in progress, not complete.",
+    "Earlier history was sampled; isolated older records cannot be excluded.",
+    "No physical reboot or real power-loss test.",
+    "Linger=no: pre-login/after-logout operation not enabled.",
+    "Desktop popup delivery not verified; service journal and event files are available.",
+    "Code changes are local and uncommitted; base commit and source hashes identify the tested code."
+  ],
+  "provisional_self_assessment": {
+    "region_isolation": 20,
+    "numeric_loto_accuracy": 25,
+    "interruption_recovery": 25,
+    "yearly_organization": 10,
+    "display_monitoring": 10,
+    "target_evidence": 8,
+    "total": 98,
+    "out_of": 100,
+    "qualification": "Self-assessed implementation evidence, not an independent grade. Two reproducibility points withheld for unperformed physical reboot and desktop popup checks; full history has separate unfinished status."
+  }
+}

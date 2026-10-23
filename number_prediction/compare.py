@@ -12,7 +12,7 @@ from number_prediction.evaluation import grouped_metrics, paired_block_interval
 
 def compare(reference_dir, candidate_dir, family, prize_index=1, comparisons=1):
     def load(folder):
-        qs = json.loads((folder / f"validation-queries-prize{prize_index}.json").read_text())
+        qs = json.loads((folder / f"validation-queries-prize{prize_index}.json").read_text(encoding="utf-8"))
         values = np.load(folder / f"validation-{family}-prize{prize_index}.npz", allow_pickle=False)
         keyed = {canonical(q).decode(): (q, int(y), p) for q, y, p in zip(qs, values["y"], values["probabilities"])}
         if len(keyed) != len(qs):
@@ -41,6 +41,8 @@ def compare(reference_dir, candidate_dir, family, prize_index=1, comparisons=1):
 
 
 def main():
+    from number_prediction import configure_cli
+    configure_cli()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--reference", type=Path, required=True)
     parser.add_argument("--candidate", type=Path, required=True)

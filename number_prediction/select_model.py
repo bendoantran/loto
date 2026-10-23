@@ -13,6 +13,8 @@ from number_prediction.evaluation import metrics, paired_block_interval
 
 
 def main():
+    from number_prediction import configure_cli
+    configure_cli()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run", type=Path, required=True)
     parser.add_argument("--data", type=Path, required=True)
@@ -21,7 +23,7 @@ def main():
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     _, manifest = load_snapshot(args.data)
-    queries = json.loads((args.run / f"validation-queries-prize{args.prize_index}.json").read_text())
+    queries = json.loads((args.run / f"validation-queries-prize{args.prize_index}.json").read_text(encoding="utf-8"))
     baseline_names = ("uniform", "frequency", "smoothed", "province", "markov")
     names = (*baseline_names, *FAMILIES, "average", "stack")
     values, scores = {}, {}

@@ -32,8 +32,8 @@ class DataTests(unittest.TestCase):
             url = "https://xosodaiphat.com/xsmt-18-08-2007.html"
             record = {"date": "2007-08-18", "source_url": url, "status": "saved", "sha256": digest(raw),
                       "raw_path": "years/2007/raw/2007-08-18.html.gz", "draws": [{"province": "A", "prizes": {"G.8": ["09"], "G.ĐB": ["000001"]}, "quality_flags": []}]}
-            (folder / "results.jsonl").write_text(json.dumps(record) + "\n")
-            with (folder / "prizes.csv").open("w", newline="") as stream:
+            (folder / "results.jsonl").write_text(json.dumps(record) + "\n", encoding="utf-8")
+            with (folder / "prizes.csv").open("w", newline="", encoding="utf-8") as stream:
                 writer = csv.writer(stream)
                 writer.writerow(["date", "weekday", "province", "prize", "position", "number", "loto", "quality_flags", "source_url"])
                 for prize, number in (("G.8", "09"), ("G.ĐB", "000001")):
@@ -47,7 +47,13 @@ class DataTests(unittest.TestCase):
             self.assertEqual(before, (folder / "prizes.csv").read_bytes())
             with self.assertRaises(FileExistsError):
                 make_snapshot([{"root": root, "region": "xsmt"}], destination)
-            (destination / "records.jsonl").write_text("changed")
+            for evidence in (destination / "eligibility.jsonl", destination / "sources/xsmt/years/2007/prizes.csv"):
+                original = evidence.read_bytes()
+                evidence.write_bytes(b"changed evidence")
+                with self.assertRaisesRegex(ValueError, "evidence changed"):
+                    load_snapshot(destination)
+                evidence.write_bytes(original)
+            (destination / "records.jsonl").write_text("changed", encoding="utf-8")
             with self.assertRaises(ValueError):
                 load_snapshot(destination)
 

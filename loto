@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+task_root="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)"
+if [[ ! -x "$task_root/.server-runtime/loto" ]]; then
+  echo 'Run bash setup-server.sh first (or use the separate offline bundle).' >&2; exit 2
+fi
+exec "$task_root/.server-runtime/loto" "$@"

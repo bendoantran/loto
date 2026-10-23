@@ -224,13 +224,13 @@ def make_snapshot(sources, destination):
         return manifest
     except Exception:
         # Preserve failed capture evidence, never advertise a valid manifest.
-        (destination / "FAILED").write_text("Capture failed; choose a new destination after resolving the error.\n")
+        (destination / "FAILED").write_text("Capture failed; choose a new destination after resolving the error.\n", encoding="utf-8")
         raise
 
 
 def load_snapshot(root):
     root = Path(root)
-    manifest = json.loads((root / "manifest.json").read_text())
+    manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
     version = manifest.pop("data_version")
     if version != digest(canonical(manifest)):
         raise ValueError("Snapshot manifest changed")
@@ -238,7 +238,30 @@ def load_snapshot(root):
     raw = (root / "records.jsonl").read_bytes()
     if digest(raw) != manifest["records_sha256"]:
         raise ValueError("Snapshot records changed")
-    return [json.loads(line) for line in raw.splitlines()], manifest
+    records = [json.loads(line) for line in raw.splitlines()]
+    if "rows" in manifest and len(records) != manifest["rows"]:
+        raise ValueError("Snapshot row count differs from manifest")
+    # Retained source exports and eligibility decisions are part of the frozen
+    # modeling evidence, even though a fit consumes only normalized records.
+    evidence = {}
+    if "eligibility_sha256" in manifest:
+        evidence["eligibility.jsonl"] = manifest["eligibility_sha256"]
+    for source in manifest.get("sources", []):
+        if source["region"] not in ("xsmn", "xsmt"):
+            raise ValueError("Unknown snapshot source region")
+        for name, expected in source["files"].items():
+            prefix = (root / "sources" / source["region"]).resolve()
+            member = prefix / name
+            if not member.resolve().is_relative_to(prefix):
+                raise ValueError("Unsafe snapshot source path")
+            evidence[member] = expected
+    for name, expected in evidence.items():
+        member = Path(name) if isinstance(name, Path) else root / name
+        with member.open("rb") as stream:
+            actual = hashlib.file_digest(stream, "sha256").hexdigest()
+        if actual != expected:
+            raise ValueError(f"Snapshot evidence changed: {member}")
+    return records, manifest
 
 
 def observations(records):

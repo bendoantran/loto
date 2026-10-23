@@ -9,11 +9,13 @@ from number_prediction.data import make_snapshot
 
 
 def main():
+    from number_prediction import configure_cli
+    configure_cli()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=Path(__file__).with_name("config.json"))
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
-    config = json.loads(args.config.read_text())
+    config = json.loads(args.config.read_text(encoding="utf-8"))
     sources = [{**s, "root": str((args.config.resolve().parent / s["root"]).resolve())} for s in config["sources"]]
     manifest = make_snapshot(sources, args.out)
     print(json.dumps({k: manifest[k] for k in ("data_version", "rows", "decisions")}, ensure_ascii=False, indent=2))

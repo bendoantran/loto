@@ -11,6 +11,8 @@ from number_prediction.data import canonical, digest
 
 
 def main():
+    from number_prediction import configure_cli
+    configure_cli()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)

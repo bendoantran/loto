@@ -24,6 +24,7 @@ class Tables(HTMLParser):
         self.table = self.row = self.cell = None
         self.heading = ""
         self.h2 = None
+        self.paragraph = []
 
     def close_cell(self):
         if self.cell is not None and self.row is not None:
@@ -38,13 +39,17 @@ class Tables(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "p" and self.table is None:
+            self.paragraph = []
         if tag == "h2":
             self.h2 = []
         if tag == "table":
             classes = attrs.get("class", "").split()
             kind = "prizes" if "table-xsmn" in classes else "loto" if "table-loto" in classes else None
             if kind:
-                self.table = {"kind": kind, "heading": self.heading, "rows": []}
+                self.table = {"kind": kind, "heading": self.heading, "rows": [],
+                              "caption": " ".join("".join(self.paragraph).split())}
+                self.paragraph = []
         elif self.table is not None:
             if tag == "tr":
                 self.close_row()
@@ -70,6 +75,8 @@ class Tables(HTMLParser):
                 self.table = None
 
     def handle_data(self, data):
+        if self.table is None:
+            self.paragraph.append(data)
         if self.h2 is not None:
             self.h2.append(data)
         if self.cell is not None:

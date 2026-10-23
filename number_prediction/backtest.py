@@ -19,7 +19,7 @@ from number_prediction.export import export_forecasts
 
 
 def verify_policy(path, model, start, end, data_version):
-    policy = json.loads(Path(path).read_text())
+    policy = json.loads(Path(path).read_text(encoding="utf-8"))
     hash_value = policy.pop("policy_hash")
     if digest(canonical(policy)) != hash_value:
         raise ValueError("Frozen policy changed")
@@ -31,6 +31,8 @@ def verify_policy(path, model, start, end, data_version):
 
 
 def main():
+    from number_prediction import configure_cli
+    configure_cli()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--model", type=Path, help="Saved learned/baseline package; omit for operational baseline")
@@ -46,7 +48,7 @@ def main():
     args = parser.parse_args()
     if args.out.exists() or args.start > args.end:
         parser.error("Use a new output directory and ordered dates")
-    config = json.loads(args.config.read_text())
+    config = json.loads(args.config.read_text(encoding="utf-8"))
     rows, manifest = load_snapshot(args.data)
     draws = observations(rows)
     model = Predictor.load(args.model, draws) if args.model else None

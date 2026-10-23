@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+task_root="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)"
+cd -- "$task_root"
+if [[ ! -f .venv/loto-setup-complete.json ]]; then
+  echo 'Run bash setup.sh in this directory first.' >&2
+  exit 2
+fi
+export PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUTF8=1
+unset PYTHONHOME PYTHONPATH
+export OMP_NUM_THREADS="${LOTO_THREADS:-2}" OPENBLAS_NUM_THREADS="${LOTO_THREADS:-2}"
+export MKL_NUM_THREADS="${LOTO_THREADS:-2}" NUMEXPR_NUM_THREADS="${LOTO_THREADS:-2}"
+export CUBLAS_WORKSPACE_CONFIG=:4096:8
+export MPLCONFIGDIR="$task_root/.cache/matplotlib" XDG_CACHE_HOME="$task_root/.cache"
+export LD_LIBRARY_PATH="$task_root/native/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+# A user-local ICD entry works even when /etc/OpenCL/vendors is unwritable.
+# This loads the server driver's library; no kernel/driver installation occurs.
+if [[ -z "${OCL_ICD_VENDORS:-}" ]]; then
+  export OCL_ICD_VENDORS="$task_root/native/vendors"
+fi
+if [[ "${1:-}" == python ]]; then
+  shift
+  exec "$task_root/.venv/bin/python" "$@"
+fi
+exec "$task_root/.venv/bin/python" -m number_prediction.server "$@"

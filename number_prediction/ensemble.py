@@ -81,14 +81,14 @@ class ProbabilityStack:
         return align(raw, self.classes, self.shrink)
 
     def save(self, path):
-        with Path(path).open("x") as stream:
+        with Path(path).open("x", encoding="utf-8") as stream:
             json.dump({"regularization": self.regularization, "shrink": self.shrink, "seed": self.seed,
                        "classes": self.classes.tolist(), "coef": None if self.coef is None else self.coef.tolist(),
                        "intercept": None if self.intercept is None else self.intercept.tolist()}, stream)
 
     @classmethod
     def load(cls, path):
-        d = json.loads(Path(path).read_text())
+        d = json.loads(Path(path).read_text(encoding="utf-8"))
         obj = cls(d["regularization"], d["shrink"], d["seed"])
         obj.classes = np.asarray(d["classes"])
         obj.coef = None if d["coef"] is None else np.asarray(d["coef"])

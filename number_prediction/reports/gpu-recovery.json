@@ -1,0 +1,254 @@
+{
+  "schema": 1,
+  "task": "small GPU test and long-run recovery",
+  "updated_utc": "2026-10-22T20:36:46.465291+00:00",
+  "repository": "/home/ldoan4/Documents/Codex/2026-10-22/git/loto",
+  "gpu_fit_ran": false,
+  "driver_install_approved": true,
+  "driver_installed_by_agent": true,
+  "reboot_performed": false,
+  "pending": "Owner-controlled restart; then verify NVIDIA driver and create separate CUDA environment for the bounded small GPU pilot",
+  "recovery_implemented": true,
+  "prediction_tests": {
+    "passed": 29,
+    "failed": 0
+  },
+  "archive_tests": {
+    "passed": 36,
+    "failed": 0
+  },
+  "accepted_run": "/home/ldoan4/Documents/Codex/2026-10-22/git/loto/number_prediction/runs/recovery-2007-accepted-20261022",
+  "data_version": "2c1037f153a3818ae1272614239bb85b7c9c82cac9a56cf8a3a3ac4fd9844a58",
+  "resume_proof": "/home/ldoan4/Documents/Codex/2026-10-22/re/work/recovery-2007-accepted-proof.json",
+  "model_results_passed": 22,
+  "native_files_unchanged_on_resume": 288,
+  "tiny_fits_per_accepted_pilot": {
+    "catboost": 12,
+    "lightgbm": 12,
+    "transformer": 12,
+    "xgboost": 12
+  },
+  "final_test_scored": false,
+  "full_training_started": false,
+  "service_generated": "/home/ldoan4/Documents/Codex/2026-10-22/re/work/loto-recovery-accepted.service",
+  "service_validation_exit": 0,
+  "service_installed": false,
+  "service_enabled": false,
+  "supervisor_state": "/home/ldoan4/Documents/Codex/2026-10-22/re/work/recovery-accepted-supervisor/supervisor-state.json",
+  "handoff": "/home/ldoan4/Documents/Codex/2026-10-22/re/outputs/loto-reboot-handoff.md",
+  "source_zip": "/home/ldoan4/Documents/Codex/2026-10-22/re/outputs/loto-prediction-source-recovery.zip",
+  "proof": {
+    "final_test_scored": false,
+    "models": [
+      {
+        "family": "average",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "average",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      },
+      {
+        "family": "catboost",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "catboost",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      },
+      {
+        "family": "frequency",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "frequency",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      },
+      {
+        "family": "lightgbm",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "lightgbm",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      },
+      {
+        "family": "markov",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "markov",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      },
+      {
+        "family": "province",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "province",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      },
+      {
+        "family": "smoothed",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "smoothed",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      },
+      {
+        "family": "stack",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "stack",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      },
+      {
+        "family": "transformer",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "transformer",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      },
+      {
+        "family": "uniform",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "uniform",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      },
+      {
+        "family": "xgboost",
+        "pass": true,
+        "prize": "G.8",
+        "probe_rows": 36,
+        "validation_rows": 243
+      },
+      {
+        "family": "xgboost",
+        "pass": true,
+        "prize": "G.ĐB",
+        "probe_rows": 36,
+        "validation_rows": 250
+      }
+    ],
+    "native_files_unchanged_on_resume": 288,
+    "resume_success": true,
+    "run": "/home/ldoan4/Documents/Codex/2026-10-22/git/loto/number_prediction/runs/recovery-2007-accepted-20261022",
+    "snapshot": "2c1037f153a3818ae1272614239bb85b7c9c82cac9a56cf8a3a3ac4fd9844a58",
+    "tiny_fits": {
+      "catboost": 12,
+      "lightgbm": 12,
+      "transformer": 12,
+      "xgboost": 12
+    }
+  },
+  "gpu": {
+    "hardware": "RTX 2000 Ada Generation Laptop GPU",
+    "kernel_driver": "nouveau",
+    "torch": "2.6.0+cpu",
+    "cuda_available": false,
+    "libcuda": "libcuda.so.1",
+    "nvidia_device_nodes": [],
+    "recommended_driver": "nvidia-driver-595-open",
+    "apt_simulation": {
+      "returncode": 0,
+      "new_packages": 89,
+      "upgrades": 1,
+      "removals": 0
+    },
+    "nvidia_smi": "/usr/bin/nvidia-smi",
+    "driver_package_installed": "595.99.02",
+    "activation_requires_owner_restart": true
+  },
+  "preserved_prior_small_run_destinations": [
+    "number_prediction/runs/recovery-2007-20261022",
+    "number_prediction/runs/recovery-2007-final-20261022"
+  ],
+  "commands": {
+    "small_train": "env OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 NUMEXPR_NUM_THREADS=2 number_prediction/.venv/bin/python number_prediction/train.py --data number_prediction/datasets/post-xsmt-20261022T1936 --out number_prediction/runs/recovery-2007-accepted-20261022 --family all --prize both --params number_prediction/pilot.json --train-start 2007-08-18 --train-end 2007-10-15 --calibration-end 2007-11-15 --validation-end 2007-12-31 --checkpoint-every 1",
+    "resume": "Same small_train command plus --resume",
+    "prediction_tests": "number_prediction/.venv/bin/python -m unittest discover -s number_prediction/tests -v",
+    "archive_tests": "python3 -m unittest discover -p 'test_*.py' -v",
+    "unit_validation": "systemd-analyze --user verify /home/ldoan4/Documents/Codex/2026-10-22/re/work/loto-recovery-accepted.service"
+  },
+  "portability": {
+    "gpu_amp_recovery": "not measured",
+    "server": "not accessed",
+    "windows": "not accessed",
+    "reboot_service": "not installed or boot-tested"
+  },
+  "notes": [
+    "CPU dropout interruption/resume matched weights, loss history and probabilities exactly.",
+    "CatBoost, XGBoost and LightGBM subprocess crash/resume matched uninterrupted CPU probabilities within 1e-12.",
+    "Completed ensemble base fits and fold caches are reused. STOP and duplicate-worker checks passed.",
+    "Three tiny real-data pilot destinations were preserved during final implementation changes; each used 12 fits per learned family, 48 underlying fits including ensemble/fold fits. Final accepted pilot had approximately 28.68 seconds summed per-family fitting/report time.",
+    "All work remains local. No full experiment grid, archive tuning, server training or final-test scoring ran.",
+    "Small integration success does not establish predictive advantage."
+  ],
+  "driver_install_returncode": 0,
+  "driver_package_version": "595.99.02-0ubuntu0.26.04.1"
+}

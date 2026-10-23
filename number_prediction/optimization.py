@@ -31,7 +31,14 @@ def tune(queries, y, evaluate, storage, study_name, final_test_start="2025-01-01
         raise ValueError("Existing study belongs to different data/configuration")
     study.set_user_attr("context", context)
     study.set_user_attr("seed", seed)
-    study.set_user_attr("budgets", {"additional_trials": trials, "timeout_seconds": timeout})
+    # The caller owns the run lock. A dead worker's trials consume their original
+    # slots, rather than expanding the budget every time the command is resumed.
+    budget = {"total_trials": trials, "timeout_seconds": timeout}
+    if study.user_attrs.get("budgets", budget) != budget:
+        raise ValueError("Existing study has another fixed search budget")
+    study.set_user_attr("budgets", budget)
+    for trial in study.get_trials(states=(optuna.trial.TrialState.RUNNING,)):
+        study.tell(trial.number, state=optuna.trial.TrialState.FAIL)
 
     def objective(trial):
         params = {}
@@ -58,7 +65,11 @@ def tune(queries, y, evaluate, storage, study_name, final_test_start="2025-01-01
         trial.set_user_attr("resolved", params)
         return float(np.mean(scores))
 
-    study.optimize(objective, n_trials=trials, timeout=timeout, n_jobs=1)
+    spent = sum((t.datetime_complete - t.datetime_start).total_seconds() for t in study.trials
+                if t.datetime_complete and t.datetime_start)
+    remaining = max(0, trials - len(study.trials))
+    if remaining and spent < timeout:
+        study.optimize(objective, n_trials=remaining, timeout=timeout - spent, n_jobs=1)
     params = study.best_trial.user_attrs["resolved"]
     outer = evaluate(params, outer_train, outer_valid)
     return {"params": params, "inner_log_loss": study.best_value,
@@ -96,6 +107,6 @@ def freeze_policy(path, policy):
     if policy["selection_end"] >= policy["final_test_start"]:
         raise ValueError("Selection crosses final test")
     payload = {**policy, "policy_hash": digest(canonical(policy))}
-    with Path(path).open("x") as stream:
+    with Path(path).open("x", encoding="utf-8") as stream:
         json.dump(payload, stream, sort_keys=True, indent=2)
     return payload

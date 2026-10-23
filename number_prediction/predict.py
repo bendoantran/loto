@@ -14,6 +14,8 @@ from number_prediction.export import export_forecasts
 
 
 def main():
+    from number_prediction import configure_cli
+    configure_cli()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", type=Path, action="append", required=True, help="One saved package per requested prize")
     parser.add_argument("--data", type=Path, help="Optional newer validated immutable snapshot for feature updates")

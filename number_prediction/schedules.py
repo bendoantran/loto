@@ -7,7 +7,7 @@ from zoneinfo import ZoneInfo
 
 class Schedule:
     def __init__(self, path=None):
-        self.data = json.loads(Path(path or Path(__file__).with_name("schedules.json")).read_text())
+        self.data = json.loads(Path(path or Path(__file__).with_name("schedules.json")).read_text(encoding="utf-8"))
 
     def resolve(self, province, region=None):
         matches = [r for r, spec in self.data["regions"].items() if any(province in day for day in spec["weekdays"]) and (region is None or region == r)]

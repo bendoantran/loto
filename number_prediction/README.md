@@ -1,6 +1,6 @@
 # Past-only G.ĐB / G.8 probability experiments
 
-This isolated subproject implements the six stages in `../PREDICTION_IMPLEMENTATION_PLAN.md`. The existing archive tools remain standard-library-only. Read `IMPLEMENTATION_PROGRESS.md` and `reports/` for measured results and remaining acceptance work. A working pilot is not a completed server experiment or a demonstrated prediction advantage.
+This isolated subproject implements the six stages in `../PREDICTION_IMPLEMENTATION_PLAN.md`. The existing archive tools remain standard-library-only. Read `IMPLEMENTATION_PROGRESS.md` and `reports/` for measured results and remaining acceptance work. A working pilot is not a completed server experiment or a demonstrated prediction advantage. The post-XSMT full-archive audit and bounded integration results are recorded in [reports/post-xsmt-completion.md](reports/post-xsmt-completion.md).
 
 ## Data handling
 
@@ -17,6 +17,8 @@ All inputs have dates strictly before forecast `origin` across both regions. Hor
 `config.json` reserves 2025-01-01–2026-10-21 before development. Default training ends 2021-12-31, calibration ends 2023-06-30, and comparison ends 2024-12-31. All rows from a date stay together. Final scoring requires a matching immutable selection policy. The predefined final policy freezes model weights and updates only earlier eligible feature history. `cadence.py` supports separate daily/weekly/monthly refit comparisons entirely within development, rebuilding compatible calibration from later past data at every refit. Full-scale cadence selection remains server experiment work.
 
 ## Installation
+
+For a server without sudo or package-download access, use the self-contained offline bundle described in [SERVER.md](SERVER.md). It includes a separate Python runtime, pinned binary wheels and the frozen completed modeling snapshot. `setup.sh` installs only into the extracted directory, and `loto` provides explicit doctor/pilot/prepare/start/status/stop/resume commands. A Git clone alone still excludes data, environments and recoverable runs.
 
 The local tested interpreter is Python 3.12.9 on Ubuntu 26.04.1. Use Python 3.12 for these pins; do not replace system Python. Run from the repository root:
 
@@ -59,7 +61,7 @@ $PY number_prediction/experiments.py --data number_prediction/datasets/run-001 -
 $PY number_prediction/experiments.py --data number_prediction/datasets/run-001 --out number_prediction/runs/server-grid --execute --max-jobs 1
 ```
 
-The grid covers three training-region choices and three history-input choices, both prizes, all 11 predictors, and horizons 1–5. Add explicit `--province` comparisons if sample support allows. Inspect a failed partial run before attempting recovery; it is never overwritten. Collection can continue while this grid uses its fixed snapshot. Actual XSMT coverage may be insufficient in later development/test periods; absent coverage cannot establish regional performance.
+The grid covers three training-region choices and three history-input choices, both prizes, all 11 predictors, and horizons 1–5. Add explicit `--province` comparisons if sample support allows. The grid automatically resumes a partial job under a process lock and verifies completed artifacts before skipping a job. A changed snapshot, source, environment or configuration requires a new destination. Collection can continue while this grid uses its fixed snapshot. Actual XSMT coverage may be insufficient in later development/test periods; absent coverage cannot establish regional performance. See [RECOVERY.md](RECOVERY.md) for interrupted fits, durable stops, bounded restart supervision and reboot setup.
 
 For bounded development comparisons of weight-refit policy, run `cadence.py --data DATA_SNAPSHOT --start DEVELOPMENT_START --end DEVELOPMENT_END --family catboost --out NEW_CADENCE_REPORT.json`. It reports daily/weekly/monthly refits, cost and accuracy on the same eligible targets. Its default 30-day past calibration window is fixed for all policies; fit and calibration outcomes both precede each forecast origin. Feature history updates are independent of the weight-refit cadence. Small-history origins use uniform warm-up. Predeclare parameters and compare policies over adequate development periods before changing the final evaluation contract.
 

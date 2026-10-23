@@ -31,6 +31,8 @@ def peak_memory_bytes():
 
 
 def main():
+    from number_prediction import configure_cli
+    configure_cli()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--queries", type=Path, required=True)
@@ -43,7 +45,7 @@ def main():
     started = time.perf_counter()
     model = Predictor.load(args.model)
     load_seconds = time.perf_counter() - started
-    queries = json.loads(args.queries.read_text())
+    queries = json.loads(args.queries.read_text(encoding="utf-8"))
     p = model.predict(queries)
     timings = []
     for _ in range(args.repetitions):
@@ -52,7 +54,7 @@ def main():
         timings.append(time.perf_counter() - started)
     comparison = None
     if args.reference:
-        reference = json.loads(args.reference.read_text())
+        reference = json.loads(args.reference.read_text(encoding="utf-8"))
         if reference["model_version"] != model.model_version or reference["queries"] != queries:
             raise ValueError("Reference uses different model or probes")
         expected = np.asarray(reference["probabilities"])

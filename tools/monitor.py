@@ -9,14 +9,17 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 import history
-from tools.control import start
+from tools.control import start, status
 
 
-def check(root, notify=True, repair=True):
+def check(root, notify=True, repair=True, region="xsmn"):
     progress_path = root / "progress.json"
     if not progress_path.exists():
         return None
+    status(root, region)  # Refuse wrong-region roots before changing monitor state.
     p = json.loads(progress_path.read_text(encoding="utf-8"))
+    if p.get("region", "xsmn") != region:
+        raise ValueError("Progress region differs from the requested monitor region")
     state_file = root / "monitor-state.json"
     old = json.loads(state_file.read_text(encoding="utf-8")) if state_file.exists() else {}
     completed = [y for y in p["years"] if y["remaining"] == 0]
@@ -41,7 +44,7 @@ def check(root, notify=True, repair=True):
         failure_key = p["state"] + ":" + str(p.get("message"))
         if repair:
             try:
-                messages.append("Unexpected worker exit; " + start(root))
+                messages.append("Unexpected worker exit; " + start(root, region))
             except Exception as error:
                 if failure_key != old.get("reported_failure"):
                     messages.append("Worker needs attention: " + str(error))
@@ -65,10 +68,11 @@ def check(root, notify=True, repair=True):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--root", type=Path, default=REPO)
+    p.add_argument("--region", choices=history.PROFILES, default="xsmn")
     p.add_argument("--no-notify", action="store_true")
     p.add_argument("--no-restart", action="store_true")
     args = p.parse_args()
-    check(args.root.resolve(), not args.no_notify, not args.no_restart)
+    check(args.root.resolve(), not args.no_notify, not args.no_restart, args.region)
 
 
 if __name__ == "__main__":

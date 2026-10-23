@@ -60,6 +60,8 @@ def evaluate_cadence(draws, identities, start, end, cadence, family, prize, para
 
 
 def main():
+    from number_prediction import configure_cli
+    configure_cli()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--start", required=True)
@@ -70,11 +72,11 @@ def main():
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--config", type=Path, default=Path(__file__).with_name("config.json"))
     args = parser.parse_args()
-    config = json.loads(args.config.read_text())
+    config = json.loads(args.config.read_text(encoding="utf-8"))
     if args.start > args.end or args.end >= config["final_test_start"]:
         parser.error("Cadence selection must use ordered development dates before the final test")
     rows, manifest = load_snapshot(args.data)
-    settings = json.loads(args.params.read_text()) if args.params else {}
+    settings = json.loads(args.params.read_text(encoding="utf-8")) if args.params else {}
     report = {"data_version": manifest["data_version"], "start": args.start, "end": args.end,
         "policies": [evaluate_cadence(observations(rows), manifest["identities"], args.start, args.end, cadence,
                      args.family, args.prize, settings.get("model", {})) for cadence in ("daily", "weekly", "monthly")]}

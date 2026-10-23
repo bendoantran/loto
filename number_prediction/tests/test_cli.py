@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class CLITests(unittest.TestCase):
     def test_entrypoints_and_reserved_test_refusal(self):
-        for command in ("snapshot", "train", "predict", "backtest", "benchmark", "package", "experiments", "compare", "select_model", "cadence"):
+        for command in ("snapshot", "train", "predict", "backtest", "benchmark", "package", "experiments", "compare", "select_model", "cadence", "gpu_check", "supervise"):
             result = subprocess.run([sys.executable, str(ROOT / "number_prediction" / (command + ".py")), "--help"], capture_output=True)
             self.assertEqual(result.returncode, 0, result.stderr.decode())
 
@@ -28,8 +28,8 @@ class CLITests(unittest.TestCase):
             self.assertTrue(verify_policy(path, Model(), "2025-01-01", "2026-10-21", "data-v1"))
             with self.assertRaises(ValueError):
                 verify_policy(path, Model(), "2025-01-01", "2026-10-21", "other-data")
-            content = json.loads(path.read_text())
+            content = json.loads(path.read_text(encoding="utf-8"))
             content["selection_end"] = "2026-01-01"
-            path.write_text(json.dumps(content))
+            path.write_text(json.dumps(content), encoding="utf-8")
             with self.assertRaises(ValueError):
                 verify_policy(path, Model(), "2025-01-01", "2026-10-21", "data-v1")
