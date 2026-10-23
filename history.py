@@ -12,12 +12,14 @@ import sqlite3
 import sys
 import time
 from collections import Counter
+from contextlib import closing
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 from scrape import EXPECTED, Tables
+from regions import PROFILES, dated_heading, source_url, validate_checkpoint
 
 DEFAULT_START = "2007-08-18"
 DEFAULT_END = "2026-10-21"
@@ -44,30 +46,27 @@ def json_text(value):
     return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
 
 
-def source_url(day):
-    return "https://xosodaiphat.com/xsmn-" + date.fromisoformat(day).strftime("%d-%m-%Y") + ".html"
-
-
-def parse_day(raw, day):
+def parse_day(raw, day, region="xsmn"):
     """Preserve original numbers and flag discrepancies rather than correcting them."""
     text = raw.decode("utf-8-sig")
     parser = Tables()
     parser.feed(text)
     target = date.fromisoformat(day).strftime("%d/%m/%Y")
     cancellation = re.search(
-        rf"Kết quả\s+XSMN\s+ngày\s+{re.escape(target)}\s+không mở thưởng[^<]*",
+        rf"Kết quả\s+(?:{PROFILES[region]['tokens']})\s+ngày\s+{re.escape(target)}\s+không mở thưởng[^<]*",
         text, re.IGNORECASE)
     if cancellation:
         return {"status": "no_draw", "draws": [], "flags": [],
                 "note": " ".join(cancellation[0].split())}
     chosen = None
     for index, table in enumerate(parser.tables):
-        if table["kind"] == "prizes" and target in table["heading"]:
+        if table["kind"] == "prizes" and dated_heading(table["heading"], day, region):
             chosen = index
             break
     if chosen is None:
         no_results = re.search(r'class\s*=\s*["\']?[^>]*block-no-result', text)
-        if no_results and target in text and "không được lưu trữ" in text:
+        notice = re.search(rf"Kết quả\s+(?:{PROFILES[region]['tokens']})\s+[^<>]{{0,50}}{re.escape(target)}\s+không được lưu trữ", text, re.I)
+        if no_results and notice:
             return {"status": "unavailable", "draws": [], "flags": [],
                     "note": "Source explicitly says this date is not archived."}
         raise ValueError("Expected dated prize table or explicit not-archived notice was not found")
@@ -114,6 +113,10 @@ def parse_day(raw, day):
             break
         # Sidebar tables can reuse table-loto; only take the province tables.
         if table["kind"] == "loto" and len(loto_tables) < len(draws):
+            if region == "xsmt":
+                expected_province = draws[len(loto_tables)]["province"]
+                if not re.fullmatch(rf"Loto\s+{re.escape(expected_province)}\s+.+,\s*{re.escape(target)}", table.get("caption", "")):
+                    continue
             loto_tables.append(table)
     for index, draw in enumerate(draws):
         if index >= len(loto_tables):
@@ -139,8 +142,17 @@ def parse_day(raw, day):
     return {"status": "flagged" if flags else "saved", "draws": draws, "flags": flags}
 
 
-def connect(root, start=None, end=None):
+def connect(root, start=None, end=None, region="xsmn"):
     root = Path(root)
+    path = root / "history.sqlite3"
+    if path.exists():
+        # Read-only preflight must precede journal-mode changes and schema writes.
+        with closing(sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True)) as existing:
+            validate_checkpoint(existing, region, start, end)
+    elif region == "xsmt" and (not start or not end):
+        raise ValueError("A new XSMT root requires explicit --start and --end dates")
+    elif region not in PROFILES:
+        raise ValueError("Unknown source region: " + region)
     root.mkdir(parents=True, exist_ok=True)
     db = sqlite3.connect(root / "history.sqlite3", timeout=30)
     db.row_factory = sqlite3.Row
@@ -163,12 +175,12 @@ def connect(root, start=None, end=None):
         if last < first:
             raise ValueError("End date precedes start date")
         db.executemany("INSERT INTO settings VALUES (?,?)", [("start", start), ("end", end)])
+        if region == "xsmt":
+            db.execute("INSERT INTO settings VALUES ('region','xsmt')")
         db.executemany("INSERT INTO days(date,year,source_url) VALUES (?,?,?)",
                        [(str(first + timedelta(days=i)), (first + timedelta(days=i)).year,
-                         source_url(str(first + timedelta(days=i)))) for i in range((last - first).days + 1)])
+                         source_url(str(first + timedelta(days=i)), region)) for i in range((last - first).days + 1)])
         db.commit()
-    elif (start and stored["start"] != start) or (end and stored["end"] != end):
-        raise ValueError("Existing archive date range differs; use its saved range or a separate root")
     return db
 
 
@@ -187,7 +199,8 @@ def summary(db, state="stopped", current=None, message=None):
     total = sum(y["total"] for y in years)
     processed = sum(y["processed"] for y in years)
     settings = dict(db.execute("SELECT key,value FROM settings"))
-    return {"updated_at_utc": utcnow(), "state": state, "current_date": current,
+    return {**({"region": "xsmt"} if settings.get("region") == "xsmt" else {}),
+            "updated_at_utc": utcnow(), "state": state, "current_date": current,
             "message": message, "start": settings["start"], "end": settings["end"],
             "total_days": total, "processed_days": processed,
             "percent": round(100 * processed / total, 2) if total else 0,
@@ -216,7 +229,8 @@ def write_progress(root, db, state, current=None, message=None):
     return p
 
 
-def export_year(root, db, year):
+def export_year(root, db, year, region="xsmn"):
+    validate_checkpoint(db, region)
     folder = root / "years" / str(year)
     folder.mkdir(parents=True, exist_ok=True)
     json_path, csv_path, issue_path = folder / "results.jsonl", folder / "prizes.csv", folder / "issues.jsonl"
@@ -229,6 +243,8 @@ def export_year(root, db, year):
                 record = {"date": row["date"], "status": row["status"], "source_url": row["source_url"],
                           "fetched_at_utc": row["fetched_at"], "sha256": row["sha256"],
                           "raw_path": row["raw_path"], **payload}
+                if region == "xsmt":
+                    record["region"] = region
                 jf.write(json_text(record) + "\n")
                 if row["status"] in ("flagged", "unavailable", "review"):
                     issues.write(json_text({"date": row["date"], "status": row["status"],
@@ -308,13 +324,19 @@ def fetch(url, timeout):
         return response.read(5_000_001)
 
 
-def collect(root, db, interval=1.5, timeout=20, limit=None):
+def collect(root, db, interval=1.5, timeout=20, limit=None, region="xsmn"):
+    validate_checkpoint(db, region)
     stop_file = root / "STOP"
     current_year = None
     processed = 0
     consecutive_errors = 0
     state, day, message = "stopped", None, None
     try:
+        # Reconcile any commit that survived a crash before its export refresh,
+        # including the last date of a previous calendar year, before advancing.
+        if not stop_file.exists():
+            for y in db.execute("SELECT DISTINCT year FROM days WHERE status IN ('saved','flagged','unavailable','review','no_draw') ORDER BY year"):
+                export_year(root, db, y[0], region)
         while not stop_file.exists():
             row = db.execute("SELECT * FROM days WHERE status IN ('pending','retry') ORDER BY date LIMIT 1").fetchone()
             if row is None:
@@ -323,7 +345,7 @@ def collect(root, db, interval=1.5, timeout=20, limit=None):
             day = row["date"]
             year = row["year"]
             if current_year is not None and year != current_year:
-                export_year(root, db, current_year)
+                export_year(root, db, current_year, region)
                 logging.info("YEAR FINISHED %s", current_year)
             current_year = year
             remaining_delay = row["next_retry"] - time.time()
@@ -360,13 +382,14 @@ def collect(root, db, interval=1.5, timeout=20, limit=None):
                     continue
                 fetched_at = utcnow()
                 atomic_write(raw_file, gzip.compress(raw, mtime=0))
+                logging.info("HTTP SAVED url=%s fetched_at=%s sha256=%s", row["source_url"], fetched_at, hashlib.sha256(raw).hexdigest())
             else:
                 raw = gzip.decompress(raw_file.read_bytes())
                 fetched_at = datetime.fromtimestamp(raw_file.stat().st_mtime, timezone.utc).isoformat(timespec="seconds")
             consecutive_errors = 0
             error = None
             try:
-                payload = parse_day(raw, day)
+                payload = parse_day(raw, day, region)
             except (ValueError, UnicodeError, IndexError, KeyError) as parse_error:
                 payload = {"status": "review", "draws": [], "flags": [], "error": str(parse_error)}
                 error = str(parse_error)
@@ -382,11 +405,12 @@ def collect(root, db, interval=1.5, timeout=20, limit=None):
                          len(payload["flags"]), " cached" if cached else "")
             write_progress(root, db, "running", day)
             if processed % 10 == 0:
-                export_year(root, db, year)
+                export_year(root, db, year, region)
+            # Include the final successful request in the pacing contract.
+            if not cached and not interruptible_wait(interval, stop_file):
+                break
             if limit and processed >= limit:
                 state, message = "stopped", f"Stopped after the requested {limit} dates; run again to resume."
-                break
-            if not cached and not interruptible_wait(interval, stop_file):
                 break
     except KeyboardInterrupt:
         state, message = "stopped", "Stopped by keyboard; saved dates will be skipped on resume."
@@ -396,7 +420,11 @@ def collect(root, db, interval=1.5, timeout=20, limit=None):
         raise
     finally:
         if current_year is not None:
-            export_year(root, db, current_year)
+            export_year(root, db, current_year, region)
+        # Repair exports left behind by a crash after a committed previous year.
+        for year_row in db.execute("SELECT DISTINCT year FROM days WHERE status IN ('saved','flagged','unavailable','review','no_draw') ORDER BY year"):
+            if year_row[0] != current_year:
+                export_year(root, db, year_row[0], region)
         if stop_file.exists():
             state, message = "stopped", "STOP requested; all committed dates are safe."
         write_progress(root, db, state, day, message)
@@ -407,6 +435,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("command", choices=["run", "status", "export", "retry-review"])
     p.add_argument("--root", type=Path, default=Path(__file__).resolve().parent)
+    p.add_argument("--region", choices=PROFILES, default="xsmn")
     p.add_argument("--start")
     p.add_argument("--end")
     p.add_argument("--year", type=int)
@@ -424,6 +453,7 @@ def main():
             return
         db = sqlite3.connect(f"file:{(root / 'history.sqlite3').as_posix()}?mode=ro", uri=True, timeout=30)
         db.row_factory = sqlite3.Row
+        validate_checkpoint(db, a.region, a.start, a.end)
         progress_file = root / "progress.json"
         old = json.loads(progress_file.read_text(encoding="utf-8")) if progress_file.exists() else {}
         result = summary(db, old.get("state", "unknown"), old.get("current_date"), old.get("message"))
@@ -433,7 +463,7 @@ def main():
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return
     with WorkerLock(root):
-        db = connect(root, a.start, a.end)
+        db = connect(root, a.start, a.end, a.region)
         logging.basicConfig(filename=root / "history.log", encoding="utf-8", level=logging.INFO,
                             format="%(asctime)sZ %(levelname)s %(message)s")
         logging.Formatter.converter = time.gmtime
@@ -446,7 +476,7 @@ def main():
                 raise KeyboardInterrupt
             previous_handler = signal.signal(signal.SIGTERM, stop_on_signal)
             try:
-                collect(root, db, a.interval, a.timeout, a.limit)
+                collect(root, db, a.interval, a.timeout, a.limit, a.region)
             finally:
                 signal.signal(signal.SIGTERM, previous_handler)
         elif a.command == "retry-review":
@@ -458,7 +488,7 @@ def main():
         else:
             years = [a.year] if a.year else [r[0] for r in db.execute("SELECT DISTINCT year FROM days ORDER BY year")]
             for year in years:
-                export_year(root, db, year)
+                export_year(root, db, year, a.region)
         db.close()
 
 

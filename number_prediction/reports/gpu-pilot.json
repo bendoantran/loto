@@ -1,0 +1,481 @@
+{
+  "schema": 1,
+  "completed_utc": "2026-10-22T20:55:43.468665+00:00",
+  "gpu_pilot_complete": true,
+  "gpu_fit_ran": true,
+  "driver": "595.99.02",
+  "hardware": "NVIDIA RTX 2000 Ada Generation Laptop GPU",
+  "vram_mib": 8188,
+  "torch": "2.6.0+cu124",
+  "torch_runtime_cuda": "12.4",
+  "native_libraries": {
+    "catboost": "1.2.8",
+    "xgboost": "3.0.2",
+    "lightgbm": "4.6.0"
+  },
+  "cuda_available": true,
+  "cuda_kernel_sum": 3680.0,
+  "opencl_devices": {
+    "library": "/home/ldoan4/radioconda/lib/libOpenCL.so.1",
+    "platforms": [
+      {
+        "gpu_query_status": 0,
+        "gpus": [
+          {
+            "name": "NVIDIA RTX 2000 Ada Generation Laptop GPU",
+            "vendor": "NVIDIA Corporation",
+            "version": "OpenCL 3.0 CUDA"
+          }
+        ]
+      }
+    ],
+    "status": 0
+  },
+  "pilot": {
+    "completed_resume_pass": true,
+    "data_version": "2c1037f153a3818ae1272614239bb85b7c9c82cac9a56cf8a3a3ac4fd9844a58",
+    "development_probe_dates": [
+      "2008-01-01",
+      "2008-01-07"
+    ],
+    "final_test_scored": false,
+    "models": [
+      {
+        "calibration_n": 164,
+        "family": "average",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "average",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      },
+      {
+        "calibration_n": 164,
+        "family": "catboost",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "catboost",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      },
+      {
+        "calibration_n": 164,
+        "family": "frequency",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "frequency",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      },
+      {
+        "calibration_n": 164,
+        "family": "lightgbm",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "lightgbm",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      },
+      {
+        "calibration_n": 164,
+        "family": "markov",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "markov",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      },
+      {
+        "calibration_n": 164,
+        "family": "province",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "province",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      },
+      {
+        "calibration_n": 164,
+        "family": "smoothed",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "smoothed",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      },
+      {
+        "calibration_n": 164,
+        "family": "stack",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "stack",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      },
+      {
+        "calibration_n": 164,
+        "family": "transformer",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "transformer",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      },
+      {
+        "calibration_n": 164,
+        "family": "uniform",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "uniform",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      },
+      {
+        "calibration_n": 164,
+        "family": "xgboost",
+        "package_load_pass": true,
+        "prize": "G.8",
+        "probabilities_pass": true,
+        "probe_n": 37,
+        "training_n": 312,
+        "validation_n": 243
+      },
+      {
+        "calibration_n": 168,
+        "family": "xgboost",
+        "package_load_pass": true,
+        "prize": "G.ĐB",
+        "probabilities_pass": true,
+        "probe_n": 38,
+        "training_n": 321,
+        "validation_n": 250
+      }
+    ],
+    "native_files_unchanged_on_resume": 300,
+    "run": "/home/ldoan4/Documents/Codex/2026-10-22/git/loto/number_prediction/runs/gpu-2007-20261022",
+    "tiny_gpu_fits": {
+      "catboost": 12,
+      "lightgbm": 12,
+      "transformer": 12,
+      "xgboost": 12
+    },
+    "training_devices": {
+      "catboost": "gpu",
+      "lightgbm": "gpu",
+      "xgboost": "cuda:0"
+    },
+    "transformer_amp_fits": 12,
+    "transformer_epochs": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "torch_peak_allocated_during_verification_bytes": 34821632
+  },
+  "cpu_package_load": {
+    "atol": 1e-06,
+    "models": [
+      {
+        "max_abs_probability_difference": 5.639393622219879e-10,
+        "model": "average-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 1.5255884923404128e-10,
+        "model": "average-prize1",
+        "pass": true,
+        "rows": 38
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "catboost-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "catboost-prize1",
+        "pass": true,
+        "rows": 38
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "frequency-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "frequency-prize1",
+        "pass": true,
+        "rows": 38
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "lightgbm-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "lightgbm-prize1",
+        "pass": true,
+        "rows": 38
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "markov-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "markov-prize1",
+        "pass": true,
+        "rows": 38
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "province-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "province-prize1",
+        "pass": true,
+        "rows": 38
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "smoothed-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "smoothed-prize1",
+        "pass": true,
+        "rows": 38
+      },
+      {
+        "max_abs_probability_difference": 9.156547048361219e-13,
+        "model": "stack-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 7.905585908130064e-13,
+        "model": "stack-prize1",
+        "pass": true,
+        "rows": 38
+      },
+      {
+        "max_abs_probability_difference": 2.890442017677852e-10,
+        "model": "transformer-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 4.083609977945102e-10,
+        "model": "transformer-prize1",
+        "pass": true,
+        "rows": 38
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "uniform-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 0.0,
+        "model": "uniform-prize1",
+        "pass": true,
+        "rows": 38
+      },
+      {
+        "max_abs_probability_difference": 3.3508188237996173e-10,
+        "model": "xgboost-prize0",
+        "pass": true,
+        "rows": 37
+      },
+      {
+        "max_abs_probability_difference": 8.924084214656514e-11,
+        "model": "xgboost-prize1",
+        "pass": true,
+        "rows": 38
+      }
+    ],
+    "passed": 22,
+    "rtol": 1e-05,
+    "windows_tested": false
+  },
+  "tests": {
+    "cpu_prediction_passed": 29,
+    "gpu_passed": 4,
+    "archive_passed": 36,
+    "failed": 0,
+    "gpu_tests_skipped_in_cpu_invocation": 4
+  },
+  "pilot_settings": {
+    "tree_rounds": 8,
+    "transformer_epochs": 1,
+    "d_model": 16,
+    "heads": 2,
+    "layers": 1,
+    "sequence_length": 8,
+    "cpu_threads_max_per_process": 2
+  },
+  "split": {
+    "train_start": "2007-08-18",
+    "train_end": "2007-10-15",
+    "calibration_end": "2007-11-15",
+    "validation_end": "2007-12-31"
+  },
+  "fit_calibration_evaluation_seconds_sum": 46.09562038699994,
+  "full_training_started": false,
+  "final_test_scored": false,
+  "catboost_gpu_mid_fit_interruption_tested": false,
+  "windows_tested": false,
+  "training_server_accessed": false,
+  "recovery": {
+    "transformer": "AMP/dropout recovered after process exit at saved batch 2; tolerance checks passed",
+    "xgboost": "GPU native model recovered after process exit at saved round 3; tolerance checks passed",
+    "lightgbm": "OpenCL GPU native model recovered after process exit at saved round 3; tolerance checks passed",
+    "catboost": "Completed native GPU snapshot reload passed; mid-fit GPU interruption is not claimed"
+  },
+  "warnings": [
+    "PyTorch memory-efficient CUDA attention warned about nondeterministic backward execution. GPU recovery passed numerical tolerances, not a bitwise reproducibility guarantee.",
+    "NVIDIA OpenCL emitted generic kernel-compiler warning lines; all backend, probability and persistence checks passed."
+  ],
+  "gpu_environment": "/home/ldoan4/Documents/Codex/2026-10-22/git/loto/number_prediction/.venv-cuda",
+  "cpu_environment_preserved": "/home/ldoan4/Documents/Codex/2026-10-22/git/loto/number_prediction/.venv",
+  "commands": {
+    "gpu_tests": "env CUDA_VISIBLE_DEVICES=0 CUBLAS_WORKSPACE_CONFIG=:4096:8 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 NUMEXPR_NUM_THREADS=2 LOTO_GPU_TESTS=1 number_prediction/.venv-cuda/bin/python -m unittest number_prediction.tests.test_gpu -v",
+    "pilot": "env CUDA_VISIBLE_DEVICES=0 CUBLAS_WORKSPACE_CONFIG=:4096:8 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 NUMEXPR_NUM_THREADS=2 number_prediction/.venv-cuda/bin/python number_prediction/train.py --data number_prediction/datasets/post-xsmt-20261022T1936 --out number_prediction/runs/gpu-2007-20261022 --family all --prize both --params number_prediction/runs/gpu-pilot-20261022-params.json --train-start 2007-08-18 --train-end 2007-10-15 --calibration-end 2007-11-15 --validation-end 2007-12-31 --checkpoint-every 1",
+    "resume": "Repeat the pilot command with --resume; completed acceptance confirmed no additional fits",
+    "cpu_tests": "number_prediction/.venv/bin/python -m unittest discover -s number_prediction/tests -v",
+    "archive_tests": "python3 -m unittest discover -p 'test_*.py' -v"
+  }
+}

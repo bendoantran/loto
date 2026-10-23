@@ -1,6 +1,8 @@
 __pycache__/
 *.py[cod]
 .venv/
+.server-downloads/
+.server-runtime/
 test-runs/
 history.sqlite3
 history.sqlite3-*

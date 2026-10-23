@@ -29,8 +29,7 @@ class XsmtReferenceTests(unittest.TestCase):
         # A test-only known-good output assembled from frozen source references.
         # The Kubuntu assignment must fetch and implement real XSMT collection itself.
         expected = {d: r for d, r in self.reference["days"].items() if (d >= "2026-10-16") == (case == "pilot")}
-        db = history.connect(self.root, min(expected), max(expected))
-        db.execute("INSERT INTO settings(key,value) VALUES ('region','xsmt')")
+        db = history.connect(self.root, min(expected), max(expected), region="xsmt")
         for day, record in expected.items():
             relative = f"years/{day[:4]}/raw/{day}.html.gz"
             raw_path = self.root / relative
@@ -42,7 +41,7 @@ class XsmtReferenceTests(unittest.TestCase):
                         json.dumps(payload, ensure_ascii=False), record["draw_count"], record["number_count"], day))
         db.commit()
         for year in sorted({int(d[:4]) for d in expected}):
-            history.export_year(self.root, db, year)
+            history.export_year(self.root, db, year, region="xsmt")
         history.write_progress(self.root, db, "finished")
         db.close()
 
@@ -53,7 +52,7 @@ class XsmtReferenceTests(unittest.TestCase):
         for day, record in self.reference["days"].items():
             raw = gzip.decompress((REPO / record["raw_path"]).read_bytes())
             self.assertEqual(hashlib.sha256(raw).hexdigest(), record["raw_sha256"])
-            self.assertEqual(history.parse_day(raw, day)["draws"], record["draws"])
+            self.assertEqual(history.parse_day(raw, day, region="xsmt")["draws"], record["draws"])
 
     def test_grader_accepts_the_exact_pilot(self):
         self.make_candidate()
@@ -74,7 +73,7 @@ class XsmtReferenceTests(unittest.TestCase):
 
     def test_grader_rejects_the_wrong_region_checkpoint(self):
         self.make_candidate()
-        db = history.connect(self.root)
+        db = history.connect(self.root, region="xsmt")
         db.execute("UPDATE settings SET value='xsmn' WHERE key='region'")
         db.commit()
         db.close()

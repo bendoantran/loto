@@ -15,7 +15,7 @@ sys.path.insert(0, str(REPO))
 import history
 
 
-def verify(root, baseline=False):
+def verify(root, baseline=False, region="xsmn"):
     root = Path(root).resolve()
     if history.lock_held(root):
         raise ValueError("Stop the collector before performing a full consistent audit")
@@ -24,7 +24,9 @@ def verify(root, baseline=False):
     try:
         if db.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
             raise ValueError("Database integrity check failed")
-        settings = dict(db.execute("SELECT key,value FROM settings"))
+        settings = history.validate_checkpoint(db, region)
+        if baseline and region != "xsmn":
+            raise ValueError("The migration baseline belongs to XSMN")
         first, last = date.fromisoformat(settings["start"]), date.fromisoformat(settings["end"])
         expected = {str(first + timedelta(days=i)) for i in range((last - first).days + 1)}
         rows = {row["date"]: dict(row) for row in db.execute("SELECT * FROM days")}
@@ -42,6 +44,8 @@ def verify(root, baseline=False):
                 seen.add(day)
                 local_dates.add(day)
                 row = rows[day]
+                if record["source_url"] != row["source_url"] or (region == "xsmt" and record.get("region") != region):
+                    raise ValueError("Export region/source provenance differs: " + day)
                 if record["status"] != row["status"] or record["draws"] != json.loads(row["payload"])["draws"]:
                     raise ValueError("Database and JSON differ: " + day)
                 raw_path = (root / record["raw_path"]).resolve()
@@ -82,7 +86,7 @@ def verify(root, baseline=False):
             wanted = (manifest["start"], manifest["end"], manifest["checked_dates"], manifest["province_date_draws"], manifest["winning_numbers"], manifest["status_counts"])
             if actual != wanted:
                 raise ValueError("Archive totals differ from the migration baseline")
-        return {"verified_at_utc": history.utcnow(), "integrity": "ok", "start": settings["start"], "end": settings["end"],
+        return {"region": region, "verified_at_utc": history.utcnow(), "integrity": "ok", "start": settings["start"], "end": settings["end"],
                 "checked_dates": len(rows), "province_date_draws": draw_count, "winning_numbers": number_count,
                 "status_counts": counts, "years": years}
     finally:
@@ -93,8 +97,9 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--root", type=Path, default=REPO)
     p.add_argument("--baseline", action="store_true")
+    p.add_argument("--region", choices=history.PROFILES, default="xsmn")
     args = p.parse_args()
-    report = verify(args.root, args.baseline)
+    report = verify(args.root, args.baseline, args.region)
     history.atomic_write(args.root / "verification-local.json", json.dumps(report, ensure_ascii=False, indent=2))
     print(json.dumps({k: v for k, v in report.items() if k != "years"}, ensure_ascii=False, indent=2))
 

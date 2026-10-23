@@ -1,0 +1,24 @@
+name: Isolated prediction tests
+on: [push, pull_request]
+jobs:
+  prediction:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      NUMEXPR_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r number_prediction/requirements-cpu-linux.txt
+        if: runner.os == 'Linux'
+      - run: python -m pip install -r number_prediction/requirements-cpu-windows.txt
+        if: runner.os == 'Windows'
+      - run: python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m unittest discover -s number_prediction/tests -v

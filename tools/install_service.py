@@ -11,17 +11,26 @@ def quoted(value):
     return '"' + str(value).replace("\\", "\\\\").replace('"', '\\"').replace("%", "%%") + '"'
 
 
-def units(repo, root, python):
+def units(repo, root, python, region="xsmn"):
+    if region not in ("xsmn", "xsmt"):
+        raise ValueError("Unknown region")
+    suffix = "" if region == "xsmn" else " --region xsmt"
+    prefix = "loto" if region == "xsmn" else "loto-xsmt"
+    # WorkingDirectory= is a single path directive, not an Exec command line:
+    # quotes are literal path characters here. Spaces need no shell quoting.
+    directory = str(root).replace("%", "%%")
+    if not root.is_absolute() or any(c in directory for c in ('\n', '\r')):
+        raise ValueError("Service root must be an absolute single-line path")
     control, monitor = repo / "tools/control.py", repo / "tools/monitor.py"
     collector = f'''[Unit]
 Description=loto resumable year-by-year history collector
 
 [Service]
 Type=simple
-WorkingDirectory={quoted(root)}
+WorkingDirectory={directory}
 Environment=PYTHONUTF8=1
-ExecCondition={quoted(python)} {quoted(control)} should-run --root {quoted(root)}
-ExecStart={quoted(python)} -u {quoted(repo / "history.py")} run --root {quoted(root)}
+ExecCondition={quoted(python)} {quoted(control)} should-run --root {quoted(root)}{suffix}
+ExecStart={quoted(python)} -u {quoted(repo / "history.py")} run --root {quoted(root)}{suffix}
 TimeoutStopSec=45
 KillSignal=SIGINT
 Restart=on-failure
@@ -38,9 +47,9 @@ Description=loto quiet progress check
 
 [Service]
 Type=oneshot
-WorkingDirectory={quoted(root)}
+WorkingDirectory={directory}
 Environment=PYTHONUTF8=1
-ExecStart={quoted(python)} {quoted(monitor)} --root {quoted(root)}
+ExecStart={quoted(python)} {quoted(monitor)} --root {quoted(root)}{suffix}
 UMask=0077
 '''
     timer = '''[Unit]
@@ -54,12 +63,13 @@ Persistent=true
 [Install]
 WantedBy=timers.target
 '''
-    return {"loto-history.service": collector, "loto-monitor.service": watcher, "loto-monitor.timer": timer}
+    return {prefix + "-history.service": collector, prefix + "-monitor.service": watcher, prefix + "-monitor.timer": timer}
 
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--root", type=Path, default=REPO)
+    p.add_argument("--region", choices=["xsmn", "xsmt"], default="xsmn")
     p.add_argument("--output", type=Path)
     p.add_argument("--replace", action="store_true")
     args = p.parse_args()
@@ -67,7 +77,7 @@ def main():
         p.error("Run on Kubuntu, or use --output to generate reviewable units only")
     root = args.root.resolve()
     destination = args.output or Path.home() / ".config/systemd/user"
-    generated = units(REPO, root, Path(sys.executable).resolve())
+    generated = units(REPO, root, Path(sys.executable).resolve(), args.region)
     if not args.replace:
         for name in generated:
             if (destination / name).exists():
@@ -80,8 +90,9 @@ def main():
         path.write_text(text, encoding="utf-8", newline="\n")
     print("Units written to " + str(destination))
     print("Review, then run: systemctl --user daemon-reload")
-    print("Enable reboot/login resume: systemctl --user enable loto-history.service")
-    print("Enable quiet monitoring: systemctl --user enable --now loto-monitor.timer")
+    prefix = "loto" if args.region == "xsmn" else "loto-xsmt"
+    print(f"Enable reboot/login resume: systemctl --user enable {prefix}-history.service")
+    print(f"Enable quiet monitoring: systemctl --user enable --now {prefix}-monitor.timer")
 
 
 if __name__ == "__main__":

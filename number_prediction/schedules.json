@@ -1,0 +1,21 @@
+{
+  "version": "regional-pages-2026-10-22",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "verified_on": "2026-10-22",
+  "valid_from": "2026-10-22",
+  "valid_through": "2026-10-28",
+  "validity_policy": "Current published weekly schedule, restricted to seven prospective dates from inspection; renew from source after this interval. No historical schedule claim.",
+  "aliases": {},
+  "regions": {
+    "xsmn": {
+      "source": "https://xosodaiphat.com/xsmn-xo-so-mien-nam.html",
+      "draw_start": "16:10",
+      "weekdays": [["TP.HCM", "Đồng Tháp", "Cà Mau"], ["Bến Tre", "Vũng Tàu", "Bạc Liêu"], ["Đồng Nai", "Cần Thơ", "Sóc Trăng"], ["Tây Ninh", "An Giang", "Bình Thuận"], ["Vĩnh Long", "Bình Dương", "Trà Vinh"], ["TP.HCM", "Long An", "Bình Phước", "Hậu Giang"], ["Tiền Giang", "Kiên Giang", "Đà Lạt"]]
+    },
+    "xsmt": {
+      "source": "https://xosodaiphat.com/xsmt-xo-so-mien-trung.html",
+      "draw_start": "17:15",
+      "weekdays": [["Phú Yên", "Huế"], ["Quảng Nam", "Đắk Lắk"], ["Khánh Hòa", "Đà Nẵng"], ["Quảng Bình", "Bình Định", "Quảng Trị"], ["Gia Lai", "Ninh Thuận"], ["Quảng Ngãi", "Đà Nẵng", "Đắk Nông"], ["Khánh Hòa", "Kon Tum", "Huế"]]
+    }
+  }
+}

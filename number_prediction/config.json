@@ -1,0 +1,17 @@
+{
+  "calendar_origin": "2007-08-18",
+  "seed": 1729,
+  "final_test_start": "2025-01-01",
+  "final_test_end": "2026-10-21",
+  "final_policy": "frozen_weights_updated_past_history",
+  "selection_end": "2024-12-31",
+  "quality_policy": "target_validated_unrelated_tier_flags_allowed_v1",
+  "same_date_policy": "withhold_both_regions",
+  "top_k": 10,
+  "windows": [5, 10, 20, 50, 100],
+  "transformer": {"d_model": 256, "nhead": 8, "layers": 6, "dropout": 0.1, "sequence_length": 128},
+  "sources": [
+    {"region": "xsmn", "root": ".."},
+    {"region": "xsmt", "root": "../../work/xsmt"}
+  ]
+}
